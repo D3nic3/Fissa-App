@@ -5,28 +5,48 @@
                 Note TabStripItem will only accept single Label and/or single Image elements that it
                 will "adopt"; any other layout elements you try to specify will be ignored
             -->
-            <Label text="Home"></Label>
-            <Image src="font://&#xf015;" class="fas t-36"></Image>
+            <!-- <Label text="Festival"></Label> -->
+            <Image src="~/assets/img/festival_icon.png" class="festivalIcon"></Image>
         </TabStripItem>
+
         <TabStripItem class="navigation__item">
-            <Label text="Browse"></Label>
-            <Image src="font://&#xf1ea;" class="far t-36"></Image>
+            <!-- <Label text="Friends"></Label> -->
+            <Image src="font://&#xf500;" class="fas t-36"></Image>
         </TabStripItem>
+
         <TabStripItem class="navigation__item">
-            <Label text="Search"></Label>
-            <Image src="font://&#xf002;" class="fas t-36"></Image>
+            <!-- <Label text="Match"></Label> -->
+            <Image src="~/assets/img/match_icon.png"></Image>
+        </TabStripItem>
+
+        <TabStripItem class="navigation__item">
+            <!-- <Label text="Chat"></Label> -->
+            <Image src="font://&#xf086;" class="far t-36"></Image>
+        </TabStripItem>
+
+        <TabStripItem class="navigation__item">
+            <!-- <Label text="Profile"></Label> -->
+            <Image src="font://&#xf007;" class="fas t-36"></Image>
         </TabStripItem>
     </TabStrip>
 
     <TabContentItem>
-        <page-router-outlet name="homeTab"></page-router-outlet>
+        <page-router-outlet name="festivalTab"></page-router-outlet>
     </TabContentItem>
 
     <TabContentItem>
-        <page-router-outlet name="browseTab"></page-router-outlet>
+        <page-router-outlet name="friendTab"></page-router-outlet>
     </TabContentItem>
 
     <TabContentItem>
-        <page-router-outlet name="searchTab"></page-router-outlet>
+        <page-router-outlet name="matchTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="chatTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="profileTab"></page-router-outlet>
     </TabContentItem>
 </BottomNavigation>

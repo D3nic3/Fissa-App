@@ -6,27 +6,39 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 const routes: Routes = [
     {
         path: "",
-        redirectTo: "/(homeTab:home/default//browseTab:browse/default//searchTab:search/default)",
+        redirectTo: "/(festivalTab:festival/default//friendTab:friend/default//matchTab:match/default//chatTab:chat/default//profileTab:profile/default)",
         pathMatch: "full"
     },
 
     {
-        path: "home",
+        path: "festival",
         component: NSEmptyOutletComponent,
-        loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule),
-        outlet: "homeTab"
+        loadChildren: () => import("~/app/festival/festival.module").then((m) => m.FestivalModule),
+        outlet: "festivalTab"
     },
     {
-        path: "browse",
+        path: "friend",
         component: NSEmptyOutletComponent,
-        loadChildren: () => import("~/app/browse/browse.module").then((m) => m.BrowseModule),
-        outlet: "browseTab"
+        loadChildren: () => import("~/app/friend/friend.module").then((m) => m.FriendModule),
+        outlet: "friendTab"
     },
     {
-        path: "search",
+        path: "chat",
         component: NSEmptyOutletComponent,
-        loadChildren: () => import("~/app/search/search.module").then((m) => m.SearchModule),
-        outlet: "searchTab"
+        loadChildren: () => import("~/app/chat/chat.module").then((m) => m.ChatModule),
+        outlet: "chatTab"
+    },
+    {
+        path: "match",
+        component: NSEmptyOutletComponent,
+        loadChildren: () => import("~/app/match/match.module").then((m) => m.MatchModule),
+        outlet: "matchTab"
+    },
+    {
+        path: "profile",
+        component: NSEmptyOutletComponent,
+        loadChildren: () => import("~/app/profile/profile.module").then((m) => m.ProfileModule),
+        outlet: "profileTab"
     }
 ];
 

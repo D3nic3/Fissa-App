@@ -1,19 +1,19 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { SearchRoutingModule } from "./search-routing.module";
-import { SearchComponent } from "./search.component";
+import { ChatRoutingModule } from "./chat-routing.module";
+import { ChatComponent } from "./chat.component";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        SearchRoutingModule
+        ChatRoutingModule
     ],
     declarations: [
-        SearchComponent
+        ChatComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class SearchModule { }
+export class ChatModule { }
