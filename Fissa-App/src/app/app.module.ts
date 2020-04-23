@@ -3,20 +3,20 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserModule } from "@angular/platform-browser";
+import { FestivalComponent } from "./festival/festival.component";
 
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
+    bootstrap: [AppComponent],
+    providers: [FestivalComponent],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserModule,
     ],
-    declarations: [
-        AppComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+    declarations: [AppComponent, FestivalComponent],
+    schemas: [NO_ERRORS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

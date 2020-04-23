@@ -3,15 +3,11 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { FestivalComponent } from "./festival.component";
-import { ItemDetailComponent } from "./item-detail/item-detail.component";
 
-const routes: Routes = [
-    { path: "default", component: FestivalComponent },
-    { path: "item/:id", component: ItemDetailComponent }
-];
+const routes: Routes = [{ path: "default", component: FestivalComponent }];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forChild(routes)],
-    exports: [NativeScriptRouterModule]
+    exports: [NativeScriptRouterModule],
 })
-export class FestivalRoutingModule { }
+export class FestivalRoutingModule {}

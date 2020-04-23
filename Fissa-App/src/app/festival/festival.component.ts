@@ -1,17 +1,21 @@
 import { Component, OnInit } from "@angular/core";
 
 import { DataService, DataItem } from "../shared/data.service";
+import { Festival } from "./festival";
+import { FestivalService } from "./festival.service";
 
 @Component({
     selector: "Festival",
-    templateUrl: "./festival.component.html"
+    templateUrl: "./festival.component.html",
 })
 export class FestivalComponent implements OnInit {
-    items: Array<DataItem>;
+    festivals: Festival[];
 
-    constructor(private _itemService: DataService) { }
+    constructor(private festivalService: FestivalService) {}
 
-    ngOnInit(): void {
-        this.items = this._itemService.getItems();
+    ngOnInit() {
+        this.festivalService.findAll().subscribe((data) => {
+            this.festivals = data;
+        });
     }
 }

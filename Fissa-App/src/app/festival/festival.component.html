@@ -1,13 +1,16 @@
 <ActionBar>
-    <Label text="Festival"></Label>
+  <Label text="Festival"></Label>
 </ActionBar>
 
 <GridLayout>
-    <ListView [items]="items">
-        <ng-template let-item="item">
-            <StackLayout>
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
-            </StackLayout>
-        </ng-template>
-    </ListView>
+  <ListView [festivals]="festivals">
+    <ng-template let-festival="festival">
+      <StackLayout>
+        <Label
+          [nsRouterLink]="['../festival', festival.name]"
+          [text]="festival.name"
+        ></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
 </GridLayout>
