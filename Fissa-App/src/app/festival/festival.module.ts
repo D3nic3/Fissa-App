@@ -7,6 +7,6 @@ import { FestivalComponent } from "./festival.component";
 @NgModule({
     imports: [NativeScriptCommonModule, FestivalRoutingModule],
     declarations: [FestivalComponent],
-    schemas: [NO_ERRORS_SCHEMA],
+    schemas: [NO_ERRORS_SCHEMA]
 })
-export class FestivalModule {}
+export class FestivalModule { }

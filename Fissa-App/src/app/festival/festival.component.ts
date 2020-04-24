@@ -1,6 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-
-import { DataService, DataItem } from "../shared/data.service";
 import { Festival } from "./festival";
 import { FestivalService } from "./festival.service";
 
@@ -11,10 +9,10 @@ import { FestivalService } from "./festival.service";
 export class FestivalComponent implements OnInit {
     festivals: Festival[];
 
-    constructor(private festivalService: FestivalService) {}
+    constructor(private festivalService: FestivalService) { }
 
     ngOnInit() {
-        this.festivalService.findAll().subscribe((data) => {
+        this.festivalService.findAll().subscribe(data => {
             this.festivals = data;
         });
     }
