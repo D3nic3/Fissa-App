@@ -4,6 +4,13 @@
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 
+// Colors which is used in de app:
+// Flame                    #DB4F27     OUTLINE (BUTTON)
+// Medium Vermilion         #DB643D     FILLING COLOR
+// Blue- Green              #1F98BA     ICONS, LINKS
+// Virdian                  #3F826D
+// White                    #ffffff     BACKGROUND
+
 // Font icon class
 .fab {
     font-family: "Font Awesome 5 Brands", "fa-brands-400";
@@ -20,11 +27,31 @@
     font-weight: 400;
 }
 
+// styles layout
+ActionBar {
+    background-color: #DB643D;
+    opacity: 20;
+    color: black;
+    border-top-width: 2;
+    border-top-color: red;
+}
+
+GridLayout {
+    background-color: #ffffff;
+}
+
+StackLayout {
+    background-color: #ffffff;
+}
+
 // Custom tabstrip item class
 .navigation__item {
+    background-color:#ffffff;
     &:active,
     &:active Label {
         @include colorize($contrasted-color: complementary background 20% 0%);
+        color: #DB4F27;
+        background-color:#ffffff;
     }
 }
 
@@ -42,5 +69,85 @@
         font-size: 72;
         vertical-align: top;
         margin-top: 20%;
+    }
+
+    button {
+        background: #DB643D;
+        border: #DB4F27;
+        border-radius: 20px;
+        border-width: 1px;
+        color: #000000;
+        display: inline-block;
+        font-size: 20px;
+        margin: 20px 300px 20px 300px;
+        padding: 20px 20px 20px 20px;
+    }
+
+    .facebook {
+        background: #3b5998 ;
+        border: #3b5998 ;
+        border-radius: 50px;
+        border-width: 1px;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 20px;
+        margin: 20px 150px 20px 150px;
+        padding: 20px 20px 20px 20px;
+    }
+
+    .hr{
+        background: #DB4F27;
+        border: 2px;
+        border-color: #DB4F27;
+        height: 2px;
+        opacity: 0.2;
+        width: 1000px; //of 80%?
+    }
+
+    .logIn {
+        background: #ffffff;
+        border: none;
+        color: #1F98BA;
+        font-size: 20px;
+    }
+
+    .registerButton {
+        color: #ffffff;
+    }
+
+    searchBar {
+        background-color: #ffffff;
+        // border-radius: 40px;
+        // border-width: 3;
+        // border-top-right-radius: 10;
+        color: #000000;
+        font-size: 20;
+        margin: 50px;
+        padding: 20px;
+        // text-field-hint-color: darkgrey;
+        // placeholder-color: darkgrey;
+        text-field-background-color: #FAFAFA;
+    }
+
+    .signUp {
+        background: #DB643D;
+        border: #DB4F27;
+        border-radius: 50px;
+        border-width: 1px;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 20px;
+        margin: 20px 150px 20px 150px;
+        padding: 20px 20px 20px 20px;
+    }
+
+    textField {
+        border-color: #DB4F27;
+        border-radius: 40px;
+        border-width: 1;
+        font-size: 20;
+        margin: 20px 200px;
+        padding: 20px;
+        placeholder-color: darkgrey;
     }
 }
