@@ -1,8 +1,33 @@
-<ActionBar>
-    <Label text="Friend"></Label>
-</ActionBar>
+<Page>
+  <ActionBar>
+    <Label text="Your Friends"></Label>
+  </ActionBar>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+  <ScrollView>
+    <ListView
+      [items]="items"
+      height="500"
+      rowHeight="50"
+      separatorColor="#DB4F27"
+    >
+      <ListView.itemTemplate>
+        <ng-template let-item="item">
+          <GridLayout rows="*" columns="auto, *">
+            <Label
+              [nsRouterLink]="['../item', item.friendsID]"
+            ></Label>
+            <Image
+              row="0"
+              col="0"
+              src="res://icon"
+              class="imgListFriends"
+            ></Image>
+
+              <Label row="0" col="1" [text]="item.nickname"></Label>
+
+          </GridLayout>
+        </ng-template>
+      </ListView.itemTemplate>
+    </ListView>
+  </ScrollView>
+</Page>
