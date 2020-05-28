@@ -1,13 +1,54 @@
+<!-- observable http
+
+    <ActionBar>
+    <Label text="Festival"></Label>
+</ActionBar>
+
+<StackLayout>
+
+<SearchBar
+            [text]="searchPhrase">
+
+</SearchBar>
+
+<StackLayout>
+    <ListView [items]="items$ |async" height="500" rowHeight="200" separatorColor="#DB4F27" >
+        <ng-template let-item="item">
+            <StackLayout class="festivalList">
+                <Label [nsRouterLink]="['../item', item.evenementID]" [text]="item.evenementNaam"></Label>
+
+
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
+</StackLayout> -->
+
+<!-- hardcoded -->
 <ActionBar>
     <Label text="Festival"></Label>
 </ActionBar>
 
-<GridLayout>
-    <ListView [items]="items">
+<StackLayout>
+
+<SearchBar
+            [text]="searchPhrase"
+             (textChange)="onTextChanged($event)"
+            (clear)="onClear($event)" (submit)="onSubmit($event)">
+</SearchBar>
+
+<StackLayout>
+    <ListView [items]="items" height="500" rowHeight="200" separatorColor="#DB4F27" >
         <ng-template let-item="item">
-            <StackLayout>
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+            <StackLayout class="festivalList">
+                <Label [nsRouterLink]="['../item', item.evenementID]" [text]="item.evenementNaam"></Label>
+                <Image src="res://icon" class="imgListFestival"></Image>
+                <Label [text]="item.evenementNaam" class="labelFestival"></Label>
+                <Label [text]="item.beginDatum" class="labelFestival"></Label>
+                <Label [text]="item.stad" class="labelFestival"></Label>
+
             </StackLayout>
         </ng-template>
     </ListView>
-</GridLayout>
+</StackLayout>
+</StackLayout>

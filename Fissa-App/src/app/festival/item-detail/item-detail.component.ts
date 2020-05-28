@@ -1,28 +1,44 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
-
-import { DataService, DataItem } from "../../shared/data.service";
+import { FestivalService, DataItem } from "../festival.service";
+import { Observable } from "rxjs";
 
 @Component({
     selector: "ItemDetail",
-    templateUrl: "./item-detail.component.html"
+    templateUrl: "./item-detail.component.html",
+    styleUrls: ["./item-detail.component.css"]
+
 })
 export class ItemDetailComponent implements OnInit {
-    item: DataItem;
+//    public
+   item: DataItem;
 
-    constructor(
-        private _data: DataService,
+   constructor(
+        private _data: FestivalService,
         private _route: ActivatedRoute,
-        private _routerExtensions: RouterExtensions
+        private _routerExtensions: RouterExtensions,
+        private router: Router,
+        private festivalService: FestivalService,
+        // private routerExtensions: RouterExtensions
+        //    observable
     ) { }
 
-    ngOnInit(): void {
+   ngOnInit(): void {
         const id = +this._route.snapshot.params.id;
         this.item = this._data.getItem(id);
+        // this.festivalService.getItem(id).subscribe(item => {                     observable
+        //     this.item = item;
+        // });
     }
 
-    onBackTap(): void {
+   onBackTap(): void {
         this._routerExtensions.back();
     }
+
+    // going to matchpage navigation
+//    onMatch() {
+//         this.router.navigate(["./match"]);
+//     }
+
 }

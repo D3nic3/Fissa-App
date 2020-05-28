@@ -3,6 +3,10 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { HttpClientModule } from "@angular/common/http";
+import { MatchComponent } from "./match/match.component";
+import { FestivalComponent } from "./festival/festival.component";
+import { ItemDetailComponent } from "./festival/item-detail/item-detail.component";
 
 @NgModule({
     bootstrap: [
@@ -10,10 +14,13 @@ import { AppComponent } from "./app.component";
     ],
     imports: [
         NativeScriptModule,
+        HttpClientModule,
         AppRoutingModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        // FestivalComponent,
+        // ItemDetailComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
