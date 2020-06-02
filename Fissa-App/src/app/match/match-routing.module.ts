@@ -5,7 +5,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { MatchComponent } from "./match.component";
 
 const routes: Routes = [
-    { path: "default", component: MatchComponent }
+    // { path: "", redirectTo: "match" },
+    { path: "match", component: MatchComponent }
 ];
 
 @NgModule({

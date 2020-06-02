@@ -5,7 +5,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { FriendComponent } from "./friend.component";
 
 const routes: Routes = [
-    { path: "default", component: FriendComponent }
+    // { path: "", redirectTo: "friend" },
+    { path: "friend", component: FriendComponent }
 ];
 
 @NgModule({
