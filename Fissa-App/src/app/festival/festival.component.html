@@ -3,10 +3,10 @@
 </ActionBar>
 
 <GridLayout>
-    <ListView [items]="items">
-        <ng-template let-item="item">
+    <ListView [festivals]="festivals">
+        <ng-template let-festival="festival">
             <StackLayout>
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+                <Label [nsRouterLink]="['../festival', festival.id]" [text]="festival.name"></Label>
             </StackLayout>
         </ng-template>
     </ListView>
