@@ -1,4 +1,7 @@
 export class Festival{
+    getFestival(id: number): Festival {
+        throw new Error("Method not implemented.");
+    }
     name: string;
 
     constructor(){

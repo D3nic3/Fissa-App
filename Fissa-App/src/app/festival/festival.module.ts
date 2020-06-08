@@ -3,7 +3,7 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { FestivalRoutingModule } from "./festival-routing.module";
 import { FestivalComponent } from "./festival.component";
-import { ItemDetailComponent } from "./item-detail/item-detail.component";
+import { FestivalDetailComponent } from "./festival-detail/festival-detail.component";
 
 @NgModule({
     imports: [
@@ -12,7 +12,7 @@ import { ItemDetailComponent } from "./item-detail/item-detail.component";
     ],
     declarations: [
         FestivalComponent,
-        ItemDetailComponent
+        FestivalDetailComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
