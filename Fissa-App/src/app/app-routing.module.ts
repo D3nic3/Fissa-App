@@ -1,12 +1,16 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
-import { NSEmptyOutletComponent } from "nativescript-angular";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { LoginComponent } from "./login/login.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { AppComponent } from "./app.component";
+import { SignUpComponent } from "./sign-up/sign-up.component";
+import { SignUpEmailComponent } from "./sign-up/sign-up-email/sign-up-email.component";
+import { SignUpPasswordComponent } from "./sign-up/sign-up-password/sign-up-password.component";
+import { SignUpBirthComponent } from "./sign-up/sign-up-birth/sign-up-birth.component";
 
-export const COMPONENTS = [LoginComponent, WelcomeComponent];
+export const COMPONENTS = [LoginComponent, WelcomeComponent, SignUpComponent,
+    SignUpEmailComponent, SignUpPasswordComponent, SignUpBirthComponent];
 
 const routes: Routes = [
     // {
@@ -18,6 +22,11 @@ const routes: Routes = [
     { path: "", redirectTo: "/login", pathMatch: "full" },
     { path: "login", component: LoginComponent },
     { path: "welcome", component: WelcomeComponent },
+    { path: "sign-up", component: SignUpComponent },
+    { path: "sign-up-email", component: SignUpEmailComponent},
+    { path: "sign-up-password", component: SignUpPasswordComponent},
+    { path: "sign-up-birth", component: SignUpBirthComponent},
+
     {
         path: "tabs",
         loadChildren: () =>
@@ -59,7 +68,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        NativeScriptRouterModule.forRoot(routes, { enableTracing: true })],
+       NativeScriptRouterModule.forRoot(routes, { enableTracing: true })],
     exports: [NativeScriptRouterModule]
 })
 export class AppRoutingModule {}

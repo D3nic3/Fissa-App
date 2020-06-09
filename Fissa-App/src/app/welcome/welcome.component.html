@@ -1,3 +1,20 @@
+<FlexboxLayout>
+  <StackLayout>
+    <StackLayout class="logo">
+      <Image id="logo" src="res://logo" stretch="aspectFit"></Image>
+      <Label id="label" text="When is your next party?"></Label>
+    </StackLayout>
+
+    <StackLayout class="button">
+      <Button id="signup" text="SIGN UP" (tap)="onSignin()"></Button>
+      <Button id="facebook" text="CONTINUE WITH FACEBOOK" [nsRouterLink]="['/tabs/default']"></Button>
+      <Label id="login" text="LOG IN" (tap)="onLogin()"></Label>
+      <Label id="services" text="Terms of services" (tap)="alert()"></Label>
+    </StackLayout>
+  </StackLayout>
+</FlexboxLayout>
+
+<!--  old code testing
 <ActionBar>
     <Label text="welcome page"></Label>
 </ActionBar>
@@ -5,21 +22,4 @@
 <GridLayout rows="auto, auto">
     <Button text="Go to Tabs Page" [nsRouterLink]="['/tabs/default']"></Button>
     <Button row="1" text="Logout" (tap)="onLogout()"></Button>
-</GridLayout>
-
-<!-- <FlexboxLayout>
-    <StackLayout>
-        <StackLayout class="logo">
-            <Image id="logo" src="~/images/Logo_round.png"
-                stretch="aspectFit"></Image>
-            <Label id="label" text="When is your next party"></Label>
-        </StackLayout>
-
-        <StackLayout class="button">
-            <Button id="signup" text="SIGN UP"></Button>
-            <Button id="facebook" text="CONTINUE WITH FACEBOOK"></Button>
-            <Label id="login" text="LOG IN"></Label>
-            <Label id="services" text="Terms of services"></Label>
-        </StackLayout>
-    </StackLayout>
-</FlexboxLayout> -->
+</GridLayout> -->

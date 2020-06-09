@@ -1,0 +1,21 @@
+<StackLayout>
+    <StackLayout class="welcomeText">
+      <Label text="[insert name] what's your date of birth? "></Label>
+    </StackLayout>
+    <StackLayout>
+      <StackLayout>
+        <DatePicker year="1990" month="4" day="20"
+            [minDate]="minDate" [maxDate]="maxDate"
+            (dateChange)="onDateChanged($event)"
+            (dayChange)="onDayChanged($event)"
+            (monthChange)="onMonthChanged($event)"
+            (yearChange)="onYearChanged($event)"
+            (loaded)="onDatePickerLoaded($event)"
+            verticalAlignment="center">
+        </DatePicker>
+      </StackLayout>
+      <StackLayout>
+        <Button class="next" text="NEXT" [nsRouterLink]="['/tabs/default']"></Button>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>

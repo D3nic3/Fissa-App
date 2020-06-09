@@ -1,0 +1,29 @@
+<StackLayout>
+  <StackLayout class="welcomeText">
+    <Label text="Welcome, let's make your profile. "></Label>
+    <Label text=" What do you want to be called?"></Label>
+  </StackLayout>
+  <StackLayout>
+    <StackLayout class="textField">
+      <TextField
+        hint="Enter your nickname"
+        required
+        ngModel
+        #nicknameCtrl="ngModel"
+      ></TextField>
+      <Label
+        class="nicknameValid"
+        *ngIf="!nicknameCtrl.valid && nicknameCtrl.touched"
+        text="Please enter a nickname."
+      ></Label>
+    </StackLayout>
+    <StackLayout>
+      <Button
+        class="next"
+        text="NEXT"
+        (tap)="onEmail()"
+        [isEnabled]="nicknameCtrl.valid"
+      ></Button>
+    </StackLayout>
+  </StackLayout>
+</StackLayout>

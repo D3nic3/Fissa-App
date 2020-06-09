@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { NSModuleFactoryLoader } from "nativescript-angular/router";
 
 import { enable as traceEnable } from "tns-core-modules/trace";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 traceEnable();
 
@@ -19,7 +20,7 @@ export class MyErrorHandler implements ErrorHandler {
 
 @NgModule({
     bootstrap: [AppComponent],
-    imports: [NativeScriptModule, AppRoutingModule],
+    imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule],
     declarations: [AppComponent, ...COMPONENTS],
     providers: [
         { provide: ErrorHandler, useClass: MyErrorHandler },

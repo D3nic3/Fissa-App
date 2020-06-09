@@ -13,141 +13,154 @@
 
 // Font icon class
 .fab {
-    font-family: "Font Awesome 5 Brands", "fa-brands-400";
-    font-weight: 400;
+  font-family: "Font Awesome 5 Brands", "fa-brands-400";
+  font-weight: 400;
 }
 
 .fas {
-    font-family: "Font Awesome 5 Free", "fa-solid-900";
-    font-weight: 900;
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
 }
 
 .far {
-    font-family: "Font Awesome 5 Free", "fa-regular-400";
-    font-weight: 400;
+  font-family: "Font Awesome 5 Free", "fa-regular-400";
+  font-weight: 400;
 }
 
 // styles layout
 ActionBar {
-    background-color: #DB643D;
-    opacity: 1;
-    color: black;
-    border-top-width: 2;
-    border-top-color: red;
+  background-color: #db643d;
+  opacity: 1;
+  color: black;
+  border-top-width: 2;
+  border-top-color: red;
 }
 
 GridLayout {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 StackLayout {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 // Custom tabstrip item class
 .navigation__item {
-    background-color:#ffffff;
-    &:active,
-    &:active Label {
-        @include colorize($contrasted-color: complementary background 20% 0%);
-        color: #DB4F27;
-        background-color:#ffffff;
-    }
+  background-color: #ffffff;
+  &:active,
+  &:active Label {
+    @include colorize($contrasted-color: complementary background 20% 0%);
+    color: #db4f27;
+    background-color: #ffffff;
+  }
 }
 
 // Common page class
 .page__content {
-    &-icon,
-    &-placeholder {
-        color: const(grey);
-        font-size: 20;
-        vertical-align: center;
-        horizontal-align: center;
-    }
+  &-icon,
+  &-placeholder {
+    color: const(grey);
+    font-size: 20;
+    vertical-align: center;
+    horizontal-align: center;
+  }
 
-    &-icon {
-        font-size: 72;
-        vertical-align: top;
-        margin-top: 20%;
-    }
+  &-icon {
+    font-size: 72;
+    vertical-align: top;
+    margin-top: 20%;
+  }
 
-    button {
-        background: #DB643D;
-        border: #DB4F27;
-        border-radius: 20px;
-        border-width: 1px;
-        color: #000000;
-        display: inline-block;
-        font-size: 20px;
-        margin: 20px 300px 20px 300px;
-        padding: 20px 20px 20px 20px;
-    }
+  button {
+    background: #db643d;
+    border: #db4f27;
+    border-radius: 20px;
+    border-width: 1px;
+    color: #000000;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 300px 20px 300px;
+    padding: 20px 20px 20px 20px;
+  }
 
-    .facebook {
-        background: #3b5998 ;
-        border: #3b5998 ;
-        border-radius: 50px;
-        border-width: 1px;
-        color: #ffffff;
-        display: inline-block;
-        font-size: 20px;
-        margin: 20px 150px 20px 150px;
-        padding: 20px 20px 20px 20px;
-    }
+  .facebook {
+    background: #3b5998;
+    border: #3b5998;
+    border-radius: 50px;
+    border-width: 1px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 150px 20px 150px;
+    padding: 20px 20px 20px 20px;
+  }
 
-    .hr{
-        background: #DB4F27;
-        border: 2px;
-        border-color: #DB4F27;
-        height: 2px;
-        opacity: 0.2;
-        width: 1000px; //of 80%?
+  .form {
+    // register invalid touched
+    .label.invalid {
+      color: red;
     }
+  }
 
-    .logIn {
-        background: #ffffff;
-        border: none;
-        color: #1F98BA;
-        font-size: 20px;
-    }
+  .hr {
+    background: #db4f27;
+    border: 2px;
+    border-color: #db4f27;
+    height: 2px;
+    opacity: 0.2;
+    width: 1000px; //of 80%?
+  }
 
-    .registerButton {
-        color: #ffffff;
-    }
+  .logIn {
+    background: #ffffff;
+    border: none;
+    color: #1f98ba;
+    font-size: 20px;
+  }
 
-    searchBar {
-        background-color: #ffffff;
-        // border-radius: 40px;
-        // border-width: 3;
-        // border-top-right-radius: 10;
-        color: #000000;
-        font-size: 20;
-        margin: 50px;
-        padding: 20px;
-        // text-field-hint-color: darkgrey;
-        // placeholder-color: darkgrey;
-        text-field-background-color: #FAFAFA;
-    }
+  .registerButton {
+    color: #ffffff;
+  }
 
-    .signUp {
-        background: #DB643D;
-        border: #DB4F27;
-        border-radius: 50px;
-        border-width: 1px;
-        color: #ffffff;
-        display: inline-block;
-        font-size: 20px;
-        margin: 20px 150px 20px 150px;
-        padding: 20px 20px 20px 20px;
-    }
+  // register invalid touched
+  .ng-invalid.ng-touched {
+    border-color: red;
+    color: red;
+  }
 
-    textField {
-        border-color: #DB4F27;
-        border-radius: 40px;
-        border-width: 1;
-        font-size: 20;
-        margin: 20px 200px;
-        padding: 20px;
-        placeholder-color: darkgrey;
-    }
+  searchBar {
+    background-color: #ffffff;
+    // border-radius: 40px;
+    // border-width: 3;
+    // border-top-right-radius: 10;
+    color: #000000;
+    font-size: 20;
+    margin: 50px;
+    padding: 20px;
+    // text-field-hint-color: darkgrey;
+    // placeholder-color: darkgrey;
+    text-field-background-color: #fafafa;
+  }
+
+  .signUp {
+    background: #db643d;
+    border: #db4f27;
+    border-radius: 50px;
+    border-width: 1px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 150px 20px 150px;
+    padding: 20px 20px 20px 20px;
+  }
+
+  textField {
+    border-color: #db4f27;
+    border-radius: 40px;
+    border-width: 1;
+    font-size: 20;
+    margin: 20px 200px;
+    padding: 20px;
+    placeholder-color: darkgrey;
+  }
 }
