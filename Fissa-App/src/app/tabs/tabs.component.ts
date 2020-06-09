@@ -5,7 +5,8 @@ import { ActivatedRoute } from "@angular/router";
 @Component({
     moduleId: module.id,
     selector: "tabs-page",
-    templateUrl: "./tabs.component.html"
+    templateUrl: "./tabs.component.html",
+    styleUrls: ["./tabs.component.css"]
 })
 export class TabsComponent {
     // implements OnInit

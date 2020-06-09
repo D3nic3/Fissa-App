@@ -8,6 +8,7 @@ import { RouterExtensions } from "nativescript-angular/router";
     styleUrls: ["./sign-up-password.component.css"]
 })
 export class SignUpPasswordComponent {
+
     // hide show password
     pwdSecure = true;
     confirmPwdSecure = true;
@@ -26,6 +27,10 @@ export class SignUpPasswordComponent {
     onBirth() {
         this.routerExtension.navigate(["../sign-up-birth"]);
     }
+
+    // toggleShow() {
+    //     this.pwdSecures = !this.pwdSecures;
+    //   }
 
     // met tekst show hide
 //     private secureModeChange() {

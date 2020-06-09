@@ -5,7 +5,7 @@
 >
   <StackLayout class="stacklayout">
     <StackLayout class="logo">
-      <Image src="res://logo" id="logo" stretch="aspectFit"></Image>
+      <Image src="res://logo_round" id="logo" stretch="aspectFit"></Image>
       <Label id="label" text="Log in to get back to the party!"></Label>
     </StackLayout>
 
@@ -28,14 +28,14 @@
 
       <Button id="login" text="LOG IN" [nsRouterLink]="['/tabs/default']" ></Button>
       <Label class="forgotPassword"
-      text="Forgot password? ">
+      text="Forgot password?">
     </Label>
       <Label
         id="signup"
         text="Don't have an account? Sign up"
         (tap)="onNavigateWelcome()"
       >
-      </Label>
+</Label>
     </StackLayout>
   </StackLayout>
 </FlexboxLayout>
