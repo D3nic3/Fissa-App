@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 
+
 @Component({
     selector: "SignUpPassword",
     moduleId: module.id,
@@ -15,11 +16,6 @@ export class SignUpPasswordComponent {
     pwdSecures = true;
     confirmPwdSecures = true;
 
-    // met tekst show hide
-    // public password: string;
-    // public passwordSecureMode: boolean = true;
-    // public passwordSecureModeText: string = "Show";
-
     // implements OnInit
     constructor(private routerExtension: RouterExtensions) {
     }
@@ -28,13 +24,5 @@ export class SignUpPasswordComponent {
         this.routerExtension.navigate(["../sign-up-birth"]);
     }
 
-    // toggleShow() {
-    //     this.pwdSecures = !this.pwdSecures;
-    //   }
 
-    // met tekst show hide
-//     private secureModeChange() {
-//         this.passwordSecureMode = !this.passwordSecureMode;
-//         this.passwordSecureModeText = this.passwordSecureMode ? "Show" : "Hide";
-// }
 }
