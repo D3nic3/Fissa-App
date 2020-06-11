@@ -22,27 +22,27 @@ export class FestivalComponent implements OnInit {
     public items$: Observable<DataItem[]>;
 
     constructor(private _itemService: FestivalService) {
-     }
-
-       // set up searchbar submit event
-    onSubmit(args) {
-        // const searchBar = args.object as SearchBar;
-        let searchBar = <SearchBar>args.object;
-        this.onSearch(searchBar.text ? searchBar.text.toLowerCase() : "");
-        console.log(`Searching for ${searchBar.text}`);
-        searchBar.dismissSoftInput();
     }
 
-    onSearch(searchValue) {
-        if (searchValue !== "") {
-           this.items$ =  this.items$.filter((item) => {
-            return (item.evenementNaam && item.beginDatum && item.plaats && item.stad) &&
-            (item.evenementNaam.toLowerCase().includes(searchValue) ||
-            item.plaats.toLowerCase().includes(searchValue) ||
-            item.stad.toLowerCase().includes(searchValue));
-        });
-    }
-}
+    // set up searchbar submit event
+    // onSubmit(args) {
+    //     // const searchBar = args.object as SearchBar;
+    //     let searchBar = <SearchBar>args.object;
+    //     this.onSearch(searchBar.text ? searchBar.text.toLowerCase() : "");
+    //     console.log(`Searching for ${searchBar.text}`);
+    //     searchBar.dismissSoftInput();
+    // }
+
+    //     onSearch(searchValue) {
+    //         if (searchValue !== "") {
+    //            this.items$ =  this.items$.filter((item) => {
+    //             return (item.evenementNaam && item.beginDatum && item.plaats && item.stad) &&
+    //             (item.evenementNaam.toLowerCase().includes(searchValue) ||
+    //             item.plaats.toLowerCase().includes(searchValue) ||
+    //             item.stad.toLowerCase().includes(searchValue));
+    //         });
+    //     }
+    // }
 
     // set up searchbar clear event
     onClear(args) {
@@ -59,12 +59,12 @@ export class FestivalComponent implements OnInit {
         console.log(`Clear event raised`);
     }
 
-    onTextChanged(args) {
-        // const searchBar = args.object as SearchBar;
-        let searchBar = <SearchBar>args.object;
-        this.onSearch(searchBar.text ? searchBar.text.toLowerCase() : "");
-        console.log(`Input changed! New value: ${searchBar.text}`);
-    }
+    // onTextChanged(args) {
+    //     // const searchBar = args.object as SearchBar;
+    //     let searchBar = <SearchBar>args.object;
+    //     this.onSearch(searchBar.text ? searchBar.text.toLowerCase() : "");
+    //     console.log(`Input changed! New value: ${searchBar.text}`);
+    // }
 
     ngOnInit(): void {
         this.items$ = this._itemService.getItems();

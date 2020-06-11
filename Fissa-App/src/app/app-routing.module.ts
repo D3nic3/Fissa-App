@@ -31,7 +31,7 @@ const routes: Routes = [
     {
         path: "match",
         component: NSEmptyOutletComponent,
-        loadChildren: () => import("~/app/match/match.module").then((m) => m.MatchModule),
+        loadChildren: () => import("~/app/match-page/match-page.module").then((m) => m.MatchPageModule),
         outlet: "matchTab"
     },
     {
