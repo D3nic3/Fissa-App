@@ -10,80 +10,25 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class MatchCardComponent {
     private response = [
         {
-            "gebruikerID": 6,
-            "email": null,
-            "gebruikerNaam": "Anusappel",
-            "gebruikerVoornaam": null,
-            "gebruikerTussenvoegsel": null,
-
-            "gebruikerAchternaam": null,
-            "geboorteDatum": null,
-            "gebruikerFoto": {
-                "fotoID": 1,
-                "url": "~/app/images/draadjesvlees.png",
-                "naamKenmerk": "vlees",
-                "datum": null,
-                "alt": "ziek lekker vlees"
-            },
-            "biografie": "Curabitur interdum vehicula tempor. Aenean sed lacus malesuada, accumsan tellus non, aliquet turpis. Quisque sit amet posuere arcu. Aliquam justo ipsum, luctus in posuere in, sollicitudin ac orci. Duis mollis fringilla mollis. Proin nec elit ultrices, ornare lacus pellentesque, malesuada tortor. Duis et aliquet odio.",
-            "drugs": true,
-            "alcohol": true,
-            "wiet": true,
-            "status": true,
-            "type": null,
-            "geslacht": "m",
-            "tijdelijkeAanbevelingsPunten": 0
-        },
-        {
-            "gebruikerID": 7,
-            "email": null,
-            "gebruikerNaam": "Draadjesvlees",
-            "gebruikerVoornaam": null,
-            "gebruikerTussenvoegsel": null,
-            "gebruikerAchternaam": null,
-            "geboorteDatum": null,
-            "gebruikerFoto": {
-                "fotoID": 1,
-                "url": "~/app/images/draadjesvlees.png",
-                "naamKenmerk": "vlees",
-                "datum": null,
-                "alt": "ziek lekker vlees"
-            },
-            "biografie": "Curabitur interdum vehicula tempor. Aenean sed lacus malesuada, accumsan tellus non, aliquet turpis. Quisque sit amet posuere arcu. Aliquam justo ipsum, luctus in posuere in, sollicitudin ac orci. Duis mollis fringilla mollis. Proin nec elit ultrices, ornare lacus pellentesque, malesuada tortor. Duis et aliquet odio.",
-            "drugs": true,
-            "alcohol": true,
-            "wiet": false,
-            "status": true,
-            "type": null,
-            "geslacht": "v",
-            "tijdelijkeAanbevelingsPunten": 0
-        },
-        {
-            "gebruikerID": 8,
-            "email": null,
-            "gebruikerNaam": "Drollerndraaier",
-            "gebruikerVoornaam": null,
-            "gebruikerTussenvoegsel": null,
-            "gebruikerAchternaam": null,
-            "geboorteDatum": null,
-            "gebruikerFoto": {
-                "fotoID": 2,
-                "url": "~/app/images/suddervlees.jpg",
-                "naamKenmerk": "lekker sudderen",
-                "datum": null,
-                "alt": "lekker man"
-            },
-            "biografie": "Curabitur interdum vehicula tempor. Aenean sed lacus malesuada, accumsan tellus non, aliquet turpis. Quisque sit amet posuere arcu. Aliquam justo ipsum, luctus in posuere in, sollicitudin ac orci. Duis mollis fringilla mollis. Proin nec elit ultrices, ornare lacus pellentesque, malesuada tortor. Duis et aliquet odio.",
-            "drugs": true,
+            "id": 1,
+            "email": "mallo@mail.com",
+            "username": "mallo",
+            "firstname": "mallo",
+            "lastname": "troum",
+            "birthdate": "1997-03-15",
+            "picture": null,
+            "biography": "Lorem ipsum",
+            "drugs": false,
             "alcohol": false,
-            "wiet": true,
-            "status": false,
-            "type": null,
-            "geslacht": "v",
+            "wiet": false,
+            "gender": "man",
+            "groups": [],
+            "messages": [],
+            "events": [],
             "tijdelijkeAanbevelingsPunten": 0
         }
     ];
-    private serverUrl = "145.89.207.6:6969/gebruiker/tebeoordelen?gebruikerId=6&evenementId=1";
+    private serverUrl = "192.168.99.1:8005/user/tebeoordelen?id=6&evenementId=1";
     private personName = "";
     private personBio = ""
     private personIndex = 0;
@@ -110,9 +55,9 @@ export class MatchCardComponent {
     loadNextPerson() {
         let i = this.personIndex;
 
-        this.personName = this.response[i].gebruikerNaam;
-        this.personBio = this.response[i].biografie;
-        this.personImg = this.response[i].gebruikerFoto.url;
+        this.personName = this.response[i].username;
+        this.personBio = this.response[i].biography;
+        this.personImg = this.response[i].picture.url;
 
         if (!this.response[i].alcohol) {
             this.stripeAlcoholOn = "opacity:1;";

@@ -55,9 +55,9 @@ export class MatchComponent implements OnInit {
     }
 
     loadPerson(i) {
-        this.personName = this.response[i].gebruikerNaam;
-        this.personBio = this.response[i].biografie;
-        this.personImg = this.response[i].gebruikerFoto.url;
+        this.personName = this.response[i].username;
+        this.personBio = this.response[i].biography;
+        this.personImg = this.response[i].picture.url;
 
         if (!this.response[i].alcohol) {
             this.stripeAlcoholOn = "opacity:1;";
@@ -71,7 +71,7 @@ export class MatchComponent implements OnInit {
     }
 
     getPeopleToSwipe() {
-        fetch("https://145.89.207.254:6969/gebruiker/tebeoordelen?gebruikerId=6&evenementId=" + this.evenementId, {
+        fetch("https://192.168.99.1:8005/user/tebeoordelen?id=6&evenementId=" + this.evenementId, {
             method: "GET",
             headers: new Headers({
                 "Content-Type": "application/json"
@@ -86,7 +86,7 @@ export class MatchComponent implements OnInit {
     }
 
     addOordeel(beoordeelde_gebruiker, is_like) {
-        fetch("https://145.89.207.254:6969/oordeel?isLike=" + String(is_like) + "&beoordelaar=" + String(this.loggedInUserId) + "&beoordeeldeGebruiker=" + String(beoordeelde_gebruiker), {
+        fetch("https://192.168.99.1:8005/oordeel?isLike=" + String(is_like) + "&beoordelaar=" + String(this.loggedInUserId) + "&beoordeeldeGebruiker=" + String(beoordeelde_gebruiker), {
             method: "POST",
             headers: new Headers({
                 "Content-Type": "application/json"
@@ -104,7 +104,7 @@ export class MatchComponent implements OnInit {
         this.showThumb = "opacity:1;";
         this.animIndex = 100;
 
-        this.addOordeel(this.response[i].gebruikerID, true);
+        this.addOordeel(this.response[i].id, true);
 
         const animInterval = setInterval(() => {
             this.opacity = this.animIndex / 100;
@@ -125,7 +125,7 @@ export class MatchComponent implements OnInit {
 
     dislikePerson() {
         const i = this.personIndex;
-        this.addOordeel(this.response[i].gebruikerID, false);
+        this.addOordeel(this.response[i].id, false);
         this.doSwipe();
     }
 
