@@ -11,7 +11,7 @@ import { Observable } from "rxjs";
 
 })
 export class ItemDetailComponent implements OnInit {
-//    public
+   public
    item: DataItem;
 
    constructor(
@@ -20,16 +20,16 @@ export class ItemDetailComponent implements OnInit {
         private _routerExtensions: RouterExtensions,
         private router: Router,
         private festivalService: FestivalService,
-        // private routerExtensions: RouterExtensions
+        private routerExtensions: RouterExtensions
         //    observable
     ) { }
 
    ngOnInit(): void {
         const id = +this._route.snapshot.params.id;
-        this.item = this._data.getItem(id);
-        // this.festivalService.getItem(id).subscribe(item => {                     observable
-        //     this.item = item;
-        // });
+        // this.item = this._data.getItem(id);
+        this.festivalService.getItem(id).subscribe(item => {                    // observable
+            this.item = item;
+        });
     }
 
    onBackTap(): void {

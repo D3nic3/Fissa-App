@@ -1,4 +1,4 @@
-<!-- observable http
+<!-- observable http -->
 
     <ActionBar>
     <Label text="Festival"></Label>
@@ -7,7 +7,9 @@
 <StackLayout>
 
 <SearchBar
-            [text]="searchPhrase">
+            [text]="searchPhrase"
+            (textChange)="onTextChanged($event)"
+            (clear)="onClear($event)" (submit)="onSubmit($event)">
 
 </SearchBar>
 
@@ -16,16 +18,17 @@
         <ng-template let-item="item">
             <StackLayout class="festivalList">
                 <Label [nsRouterLink]="['../item', item.evenementID]" [text]="item.evenementNaam"></Label>
-
-
+                <Image src="res://icon" class="imgListFestival"></Image>
+                <Label [text]="item.beginDatum" class="labelFestival"></Label>
+                <Label [text]="item.stad" class="labelFestival"></Label>
             </StackLayout>
         </ng-template>
     </ListView>
 </StackLayout>
-</StackLayout> -->
+</StackLayout>
 
 <!-- hardcoded -->
-<ActionBar>
+<!-- <ActionBar>
     <Label text="Festival"></Label>
 </ActionBar>
 
@@ -51,4 +54,4 @@
         </ng-template>
     </ListView>
 </StackLayout>
-</StackLayout>
+</StackLayout> -->

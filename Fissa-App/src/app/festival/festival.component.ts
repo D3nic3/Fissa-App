@@ -15,36 +15,16 @@ import { isAndroid } from "tns-core-modules/platform";
     styleUrls: ["./festival.component.css"]
 })
 export class FestivalComponent implements OnInit {
+    //  searchbar
+    searchPhrase: string;
 
     // observable http
-//     public items$: Observable<DataItem[]>;
+    public items$: Observable<DataItem[]>;
 
-//     constructor(private _itemService: FestivalService) {
-//      }
-
-//     ngOnInit(): void {
-
-//         this.items$ = this._itemService.getItems();
-//     }
-
-// }
-
-// hardcoded
-
-    items: Array<DataItem>; //  data festivalservice
-
-    //  searchbar
-     searchPhrase: string;
-
-    // items Festivalservice
     constructor(private _itemService: FestivalService) {
-
-        // this.items.filter((item) => {
-        //     return (item) && item.evenementNaam;
-        // });
      }
 
-    // set up searchbar submit event
+       // set up searchbar submit event
     onSubmit(args) {
         // const searchBar = args.object as SearchBar;
         let searchBar = <SearchBar>args.object;
@@ -55,7 +35,7 @@ export class FestivalComponent implements OnInit {
 
     onSearch(searchValue) {
         if (searchValue !== "") {
-           this.items =  this.items.filter((item) => {
+           this.items$ =  this.items$.filter((item) => {
             return (item.evenementNaam && item.beginDatum && item.plaats && item.stad) &&
             (item.evenementNaam.toLowerCase().includes(searchValue) ||
             item.plaats.toLowerCase().includes(searchValue) ||
@@ -87,7 +67,29 @@ export class FestivalComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.items = this._itemService.getItems();
-
+        this.items$ = this._itemService.getItems();
     }
 }
+
+// hardcoded
+
+    // items: Array<DataItem>; //  data festivalservice
+
+
+
+    // // items Festivalservice
+    // constructor(private _itemService: FestivalService) {
+
+        //dezeniet
+        // this.items.filter((item) => {
+        //     return (item) && item.evenementNaam;
+        // });
+    //  }
+
+
+
+    // ngOnInit(): void {
+    //     this.items = this._itemService.getItems();
+
+    // }
+// }
