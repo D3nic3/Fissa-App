@@ -24,13 +24,13 @@ export class FestivalService {
     constructor(private http: HttpClient) {
     }
 
-    getItems(): Observable<DataItem[]> {
-    return this.http.get<DataItem[]>("http://192.168.2.11:6666/evenement?pageNr=1");
-        }
-    getItem(evenementID: number): Observable<DataItem> {
-        return this.http.get<DataItem>("http://192.168.2.11:6666/evenement?pageNr=1" + evenementID);
-    }
-    }
+    // getItems(): Observable<DataItem[]> {
+    // return this.http.get<DataItem[]>("http://192.168.2.11:6666/evenement?pageNr=1");
+    //     }
+    // getItem(evenementID: number): Observable<DataItem> {
+    //     return this.http.get<DataItem>("http://192.168.2.11:6666/evenement?pageNr=1" + evenementID);
+    // }
+}
 
     // hard coded
 //     private items = new Array<DataItem>(

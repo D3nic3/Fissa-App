@@ -67,7 +67,7 @@ export class FestivalComponent implements OnInit {
     // }
 
     ngOnInit(): void {
-        this.items$ = this._itemService.getItems();
+        // this.items$ = this._itemService.getItems();
     }
 }
 

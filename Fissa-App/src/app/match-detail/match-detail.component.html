@@ -3,9 +3,9 @@
     <GridLayout [style]="cardStyle">
         <AbsoluteLayout class="stripes">
             <WrapLayout class="signs">
-                <Image class="alcoholStripe stripe" src='~/app/images/red_stripe.png' [style]="stripeAlcoholOn"></Image>
-                <Image class="wietStripe stripe" src='~/app/images/red_stripe.png' [style]="stripeWeedOn"></Image>
-                <Image class="drugsStripe stripe" src='~/app/images/red_stripe.png' [style]="stripeDrugsOn"></Image>
+                <Image class="alcoholStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeAlcoholOn"></Image>
+                <Image class="wietStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeWeedOn"></Image>
+                <Image class="drugsStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeDrugsOn"></Image>
             </WrapLayout>
         </AbsoluteLayout>
 
@@ -14,21 +14,21 @@
             <Label class="personName" [text]="personName"></Label>
 
             <WrapLayout>
-                <Image class='alcoholSign signicon' src='~/app/images/alcohol.png'></Image>
-                <Image class='wietSign signicon' src='~/app/images/weed.png'></Image>
-                <Image class='drugsSign signicon' src='~/app/images/pills.png'></Image>
+                <Image class='alcoholSign signicon' src='~/assets/img/alcohol.png'></Image>
+                <Image class='wietSign signicon' src='~/assets/img//weed.png'></Image>
+                <Image class='drugsSign signicon' src='~/assets/img/pills.png'></Image>
             </WrapLayout>
 
             <StackLayout class='line'></StackLayout>
             <Label textWrap="true" class="personBio" [text]="personBio"></Label>
             <StackLayout class='line'></StackLayout>
             <StackLayout class="declineButton" (tap)="dislikePerson();">
-                <Image src='~/app/images/cross.png'></Image>
+                <Image src='~/assets/img/cross.png'></Image>
             </StackLayout>
         </StackLayout>
     </GridLayout>
 </ScrollView>
 
 <AbsoluteLayout [style]="showThumb">
-    <Image class="thumb-up" src='~/app/images/thumbup.png'></Image>
+    <Image class="thumb-up" src='~/assets/img/thumbup.png'></Image>
 </AbsoluteLayout>

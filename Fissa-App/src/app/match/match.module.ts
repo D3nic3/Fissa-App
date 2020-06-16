@@ -22,4 +22,4 @@ import { MatchCardComponent } from "../match-card/match-card.component";
         NO_ERRORS_SCHEMA
     ]
 })
-export class MatchModule { }
+export class AppModule { }

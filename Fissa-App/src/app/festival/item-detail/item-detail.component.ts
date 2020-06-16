@@ -11,10 +11,10 @@ import { Observable } from "rxjs";
 
 })
 export class ItemDetailComponent implements OnInit {
-   public
-   item: DataItem;
+    public
+    item: DataItem;
 
-   constructor(
+    constructor(
         private _data: FestivalService,
         private _route: ActivatedRoute,
         private _routerExtensions: RouterExtensions,
@@ -24,21 +24,21 @@ export class ItemDetailComponent implements OnInit {
         //    observable
     ) { }
 
-   ngOnInit(): void {
+    ngOnInit(): void {
         const id = +this._route.snapshot.params.id;
         // this.item = this._data.getItem(id);
-        this.festivalService.getItem(id).subscribe(item => {                    // observable
-            this.item = item;
-        });
+        // this.festivalService.getItem(id).subscribe(item => {                    // observable
+        //     this.item = item;
+        // });
     }
 
-   onBackTap(): void {
+    onBackTap(): void {
         this._routerExtensions.back();
     }
 
     // going to matchpage navigation
-//    onMatch() {
-//         this.router.navigate(["./match"]);
-//     }
+    //    onMatch() {
+    //         this.router.navigate(["./match"]);
+    //     }
 
 }

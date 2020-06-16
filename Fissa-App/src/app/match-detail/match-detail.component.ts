@@ -4,7 +4,7 @@ import { setInterval, clearInterval } from "tns-core-modules/timer";
 import { MatchService } from "./match-service";
 
 @Component({
-    selector: "matching-detail",
+    selector: "match-detail",
     templateUrl: "./match-detail.component.html",
     styleUrls: ["./match-detail.css"]
 })
