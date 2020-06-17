@@ -5,7 +5,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { ProfileComponent } from "./profile.component";
 
 const routes: Routes = [
-    { path: "default", component: ProfileComponent }
+    // { path: "", redirectTo: "profile" },
+    { path: "profile", component: ProfileComponent }
 ];
 
 @NgModule({

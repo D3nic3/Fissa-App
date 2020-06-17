@@ -1,0 +1,15 @@
+<FlexboxLayout>
+  <StackLayout>
+    <StackLayout class="logo">
+      <Image id="logo" src="res://logo_round" stretch="aspectFit"></Image>
+      <Label id="label" text="When is your next party?"></Label>
+    </StackLayout>
+
+    <StackLayout class="button">
+      <Button id="signup" text="SIGN UP" (tap)="onSignin()"></Button>
+      <Button id="facebook" text="CONTINUE WITH FACEBOOK" [nsRouterLink]="['/tabs/default']"></Button>
+      <Label id="login" text="LOG IN" (tap)="onLogin()"></Label>
+      <Label id="services" text="Terms of services" (tap)="alert()"></Label>
+    </StackLayout>
+  </StackLayout>
+</FlexboxLayout>

@@ -5,7 +5,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { ChatComponent } from "./chat.component";
 
 const routes: Routes = [
-    { path: "default", component: ChatComponent }
+    // { path: "", redirectTo: "chat" },
+    { path: "chat", component: ChatComponent }
 ];
 
 @NgModule({

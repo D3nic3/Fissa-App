@@ -1,29 +1,35 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA, ErrorHandler, NgModuleFactoryLoader } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule, COMPONENTS } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MatchComponent } from "./match/match.component";
 import { FestivalComponent } from "./festival/festival.component";
 import { ItemDetailComponent } from "./festival/item-detail/item-detail.component";
 
+import { NSModuleFactoryLoader } from "nativescript-angular/router";
+
+import { enable as traceEnable } from "tns-core-modules/trace";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+
+traceEnable();
+
+export class MyErrorHandler implements ErrorHandler {
+    handleError(error) {
+        console.log("### ErrorHandler Error: " + error.toString());
+        console.log("### ErrorHandler Stack: " + error.stack);
+    }
+}
+
 @NgModule({
-    bootstrap: [
-        AppComponent
+    bootstrap: [AppComponent],
+    imports: [NativeScriptModule, HttpClientModule, AppRoutingModule, NativeScriptFormsModule],
+    declarations: [AppComponent, ...COMPONENTS],
+    providers: [
+        { provide: ErrorHandler, useClass: MyErrorHandler },
+        { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
     ],
-    imports: [
-        NativeScriptModule,
-        HttpClientModule,
-        AppRoutingModule
-    ],
-    declarations: [
-        AppComponent,
-        // FestivalComponent,
-        // ItemDetailComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+    schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}

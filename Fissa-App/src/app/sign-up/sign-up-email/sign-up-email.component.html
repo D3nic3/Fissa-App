@@ -1,0 +1,31 @@
+<StackLayout>
+  <StackLayout class="welcomeText">
+    <Label text="Hi, nice to meet you [insert name]! "></Label>
+    <Label text=" What is your emailadress?"></Label>
+  </StackLayout>
+  <StackLayout>
+    <StackLayout class="textField">
+      <TextField
+        hint="Enter your emailadress"
+        keyboardType="email"
+        type="email"
+        required
+        ngModel email="true"
+        #emailadressCtrl="ngModel"
+      >
+      </TextField>
+      <Label
+      class="emailadressValid"
+      *ngIf="!emailadressCtrl.valid && emailadressCtrl.touched"
+      text="Please enter a valid emailadress."
+    ></Label>
+    </StackLayout>
+    <StackLayout>
+      <Button class="next" text="NEXT" (tap)="onPassword()"  [isEnabled]="emailadressCtrl.valid"></Button>
+    </StackLayout>
+    <StackLayout class="check">
+      <Label text="Make sure this is not a fake email, cause"> </Label>
+      <Label text="we are going to check!"></Label>
+    </StackLayout>
+  </StackLayout>
+</StackLayout>
