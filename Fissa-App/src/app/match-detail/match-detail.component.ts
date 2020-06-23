@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { setInterval, clearInterval } from "tns-core-modules/timer";
-import { MatchService } from "./match-service";
+// import { MatchService } from "./match-service";
 
 @Component({
     selector: "match-detail",
@@ -10,7 +10,7 @@ import { MatchService } from "./match-service";
 })
 
 export class MatchComponent implements OnInit {
-    private response = this.matchservice.getResponse();
+    private response;
     private loggedInUserId = 1;
     private evenementId = 1;
     private personName = "";
@@ -28,50 +28,58 @@ export class MatchComponent implements OnInit {
     private cardVisibility = "visible";
     private morePeople = true;
 
-    constructor(private http: HttpClient, private matchservice: MatchService) {
+    constructor(private http: HttpClient) {
         // Use the constructor to inject services.
     }
 
     ngOnInit(): void {
         this.getPeopleToSwipe();
-        this.loadNextPerson();
+        this.loadPerson();
     }
 
     loadNextPerson() {
-        const i = this.personIndex;
-
-        if (this.response.length - 1 === this.personIndex) {
-            this.loadPerson(this.personIndex);
-            if (!this.morePeople) {
-                this.noMorePeopleSignVisibility = "visible";
-                this.cardVisibility = "hidden";
-            }
-            this.morePeople = false;
+        // const i = this.personIndex;
+        
+        if(this.response.length > 0) {
+            this.response.splice(0,1);
+            this.loadPerson();
         } else {
-            this.loadPerson(this.personIndex);
-            this.personIndex++;
+            this.noMorePeopleSignVisibility = "visible";
+            this.cardVisibility = "hidden";
         }
+
+        // if (this.response.length - 1 === this.personIndex) {
+        //     this.loadPerson(this.personIndex);
+        //     if (!this.morePeople) {
+        //         this.noMorePeopleSignVisibility = "visible";
+        //         this.cardVisibility = "hidden";
+        //     }
+        //     this.morePeople = false;
+        // } else {
+        //     // this.loadPerson(this.personIndex);
+        //     this.personIndex++;
+        // }
 
     }
 
-    loadPerson(i) {
-        this.personName = this.response[i].username;
-        this.personBio = this.response[i].biography;
-        this.personImg = this.response[i].picture.url;
+    loadPerson() {
+        this.personName = this.response[0].username;
+        this.personBio = this.response[0].biography;
+        this.personImg = this.response[0].picture.url;
 
-        if (!this.response[i].alcohol) {
+        if (!this.response[0].alcohol) {
             this.stripeAlcoholOn = "opacity:1;";
         }
-        if (!this.response[i].wiet) {
+        if (!this.response[0].wiet) {
             this.stripeWeedOn = "opacity:1;";
         }
-        if (!this.response[i].drugs) {
+        if (!this.response[0].drugs) {
             this.stripeDrugsOn = "opacity:1;";
         }
     }
 
     getPeopleToSwipe() {
-        fetch("https://192.168.99.1:8005/user/tebeoordelen?id=6&evenementId=" + this.evenementId, {
+        fetch("http://192.168.99.1:8005/users/1/events/" + this.evenementId, {
             method: "GET",
             headers: new Headers({
                 "Content-Type": "application/json"
@@ -86,11 +94,19 @@ export class MatchComponent implements OnInit {
     }
 
     addOordeel(beoordeelde_gebruiker, is_like) {
-        fetch("https://192.168.99.1:8005/oordeel?isLike=" + String(is_like) + "&beoordelaar=" + String(this.loggedInUserId) + "&beoordeeldeGebruiker=" + String(beoordeelde_gebruiker), {
+        fetch("http://192.168.99.1:8005/oordeels/", {
             method: "POST",
             headers: new Headers({
+                'Accept': 'application/json',
+                
                 "Content-Type": "application/json"
-            })
+            }),
+            body: JSON.stringify(
+                {
+                    "isLike": is_like,
+                    "beoordelaar": this.loggedInUserId,
+                    "beoordeeldeGebruiker": beoordeelde_gebruiker
+                })
         })
             .then((response) => response.json()
                 .then((r) => {
@@ -107,8 +123,8 @@ export class MatchComponent implements OnInit {
         this.addOordeel(this.response[i].id, true);
 
         const animInterval = setInterval(() => {
-            this.opacity = this.animIndex / 100;
-            this.showThumb = "opacity:" + String(this.opacity) + ";";
+            // this.opacity = this.animIndex / 100;
+            // this.showThumb = "opacity:" + String(this.opacity) + ";";
 
             this.animIndex -= 5;
             if (this.animIndex == 0) {
