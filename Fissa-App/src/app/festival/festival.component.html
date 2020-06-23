@@ -1,20 +1,29 @@
 <!-- observable http -->
 
-    <ActionBar>
-    <Label text="Festival"></Label>
-</ActionBar>
+    <ActionBar title=""></ActionBar>
 
+<input [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange()" />
 <StackLayout>
 
-<SearchBar
+<!-- <SearchBar
             [text]="searchPhrase"
             (textChange)="onTextChanged($event)"
             (clear)="onClear($event)" (submit)="onSubmit($event)">
 
-</SearchBar>
+</SearchBar> -->
 
-<StackLayout>
-    <ListView [items]="items$ |async" height="500" rowHeight="200" separatorColor="#DB4F27" >
+<SearchBar type="text" [formControl]="filter" hint="Search for an event.."></SearchBar>
+
+<!-- <ActivityIndicator [busy]="isBusy" (busyChange)="onBusyChanged($event) "></ActivityIndicator> -->
+<StackLayout >
+
+  <!-- loadMoreDataRequested="{{onLoadMoreItemsRequested}}" -->
+    <ListView [items]="items$ |async"
+    loadOnDemandMode="Auto"
+    loadOnDemandBufferSize="5"
+    height="500" rowHeight="200" separatorColor="#DB4F27"
+     >
+     <ActivityIndicator [busy]="false"></ActivityIndicator>
         <ng-template let-item="item">
             <StackLayout class="festivalList">
                 <Label [nsRouterLink]="['../item', item.evenementID]" [text]="item.evenementNaam"></Label>
@@ -24,6 +33,7 @@
             </StackLayout>
         </ng-template>
     </ListView>
+    <!-- <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" height="100" width="100" color="red" backgroundColor="gray" class="spinner"></ActivityIndicator> -->
 </StackLayout>
 </StackLayout>
 

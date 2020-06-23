@@ -4,11 +4,17 @@
 </ActionBar>
 
 <ScrollView>
-<StackLayout *ngIf="item" class="festivalInfo">
+<StackLayout *ngIf="item" class="festivalInfo" >
     <Image src="res://icon" class="festivalImg"></Image>
+
     <Label class="m-10 h3" verticalAlignment="top" [text]="item.evenementNaam"></Label>
 
-    <Button text="I'm going" class="going" ></Button>
+    <Button text="I'm going" class="going" (tap)="onMatch()"
+
+
+    ></Button>
+
+    <!-- [nsRouterLink]="['/tabs/default', {outlets: { matchTab: ['match'] }}]" -->
 
     <StackLayout class="hr"></StackLayout>
     <Label class="h3" text="Start date"></Label>
@@ -38,7 +44,7 @@
     <StackLayout class="hr"></StackLayout>
 
     <Label class="h3" text="Maps"></Label>
-    <Image src="res://icon" class="festivalImg" tap="onTap" ></Image>
+    <Image src="~/assets/img/map.png" class="festivalImg" (tap)="onMap()" ></Image>
 </StackLayout>
 </ScrollView>
 

@@ -8,9 +8,10 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
 import { SignUpEmailComponent } from "./sign-up/sign-up-email/sign-up-email.component";
 import { SignUpPasswordComponent } from "./sign-up/sign-up-password/sign-up-password.component";
 import { SignUpBirthComponent } from "./sign-up/sign-up-birth/sign-up-birth.component";
+import { FestivalMapComponent } from "./festival/festival-map/festival-map.component";
 
 export const COMPONENTS = [LoginComponent, WelcomeComponent, SignUpComponent,
-    SignUpEmailComponent, SignUpPasswordComponent, SignUpBirthComponent];
+    SignUpEmailComponent, SignUpPasswordComponent, SignUpBirthComponent, FestivalMapComponent];
 
 const routes: Routes = [
     // {
@@ -26,6 +27,8 @@ const routes: Routes = [
     { path: "sign-up-email", component: SignUpEmailComponent},
     { path: "sign-up-password", component: SignUpPasswordComponent},
     { path: "sign-up-birth", component: SignUpBirthComponent},
+    { path: "festival-map", component: FestivalMapComponent},
+
 
     {
         path: "tabs",

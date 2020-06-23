@@ -25,10 +25,10 @@ export class FestivalService {
     }
 
     getItems(): Observable<DataItem[]> {
-    return this.http.get<DataItem[]>("http://192.168.2.11:6666/evenement?pageNr=1");
+    return this.http.get<DataItem[]>("http://192.168.2.8:6666/evenement?pageNr=1");
         }
     getItem(evenementID: number): Observable<DataItem> {
-        return this.http.get<DataItem>("http://192.168.2.11:6666/evenement?pageNr=1" + evenementID);
+        return this.http.get<DataItem>("http://192.168.2.8:6666/evenement?pageNr=1" + evenementID);
     }
     }
 
