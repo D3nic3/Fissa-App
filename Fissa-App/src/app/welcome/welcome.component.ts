@@ -30,80 +30,98 @@ export class WelcomeComponent implements OnInit {
     alert() {
         alert({
             title: "Terms of services",
-            message: `Fissa One, gevestigd aan Triangelstraat 76, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.
+            message:
+`Fissa One, located at Triangelstraat 76, is responsible for the processing of personal data as shown in this privacy statement.
 
-Contactgegevens:
+Contact details:
 https://fissaofficial.com/
 Triangelstraat 76
 0630012930
-Florian Korzelius is de Functionaris Gegevensbescherming van Fissa One. Hij is te bereiken via FKorzelius@fissaofficial.com
+Florian Korzelius is the Data Protection Officer of Fissa One He can be reached at FKorzelius@fissaofficial.com
 
-Persoonsgegevens die wij verwerken
-Fissa One verwerkt je persoonsgegevens doordat je gebruik maakt van onze diensten en/of omdat je deze gegevens zelf aan ons verstrekt.
+Personal data that we process
+Fissa One processes your personal data because you use our services and / or because you provide this data to us yourself.
 
-Hieronder vind je een overzicht van de persoonsgegevens die wij verwerken
-    - Voor- en achternaam
-    - Geslacht
-    - Geboortedatum
-    - Geboorteplaats
-    - Telefoonnummer
-    - E-mailadres
-    - IP-adres"
-    - Overige persoonsgegevens die je actief verstrekt bijvoorbeeld door een profiel op deze Applicatie aan te maken, in correspondentie en telefonisch
-    - Locatiegegevens
-    - Gegevens over jouw surfgedrag over verschillende Applicaties heen (bijvoorbeeld omdat dit bedrijf onderdeel is van een advertentienetwerk)
-    - Internetbrowser en apparaat type
+Below you will find an overview of the personal data we process:
+    - First and last name
+    - Sex
+    - Date of birth
+    - Birthplace
+    - Phone number
+    - E-mail address
+    - IP address
+    - Other personal data that you actively
+      provide, for example by creating a profile
+      on this Application, in correspondence
+      and by telephone
+    - Location data
+    - Data about your surfing behavior across
+      different Applications (for example,
+      because this company is part of an
+      advertising network)
+    - Internet browser and device type
 
-Bijzondere en/of gevoelige persoonsgegevens die wij verwerken
-Onze Applicatie en/of dienst heeft niet de intentie gegevens te verzamelen over Applicatie Bezoekers die jonger zijn dan 16 jaar. Tenzij ze toestemming hebben van ouders of voogd. We kunnen echter niet controleren of een bezoeker ouder dan 16 is. Wij raden ouders dan ook aan betrokken te zijn bij de online activiteiten van hun kinderen, om zo te voorkomen dat er gegevens over kinderen verzameld worden zonder ouderlijke toestemming. Als je er van overtuigd bent dat wij zonder die toestemming persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met ons op via FKorzelius@fissaofficial.com, dan verwijderen wij deze informatie.
+Special and / or sensitive personal data that we process
+Our Application and / or service does not intend to collect information about Application Visitors who are under 16 years old. Unless they have parental or guardian permission. However, we cannot check whether a visitor is older than 16. We therefore recommend that parents be involved in the online activities of their children, in order to prevent data about children from being collected without parental consent. If you are convinced that we have collected personal information about a minor without this permission, please contact us at FKorzelius@fissaofficial.com and we will delete this information.
 
-Met welk doel en op basis van welke grondslag wij persoonsgegevens verwerken
-Fissa One verwerkt jouw persoonsgegevens voor de volgende doelen:
-    - Verzenden van onze nieuwsbrief en/of reclamefolder
-    - Je te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren
-    - Je te informeren over wijzigingen van onze diensten en producten
-    - Je de mogelijkheid te bieden een account aan te maken
-    - Fissa One analyseert jouw gedrag op de Applicatie om daarmee de Applicatie te verbeteren en het aanbod van producten en diensten af te stemmen op jouw voorkeuren.
+For what purpose and on what basis we process personal data
+Fissa One processes your personal data for the following purposes:
+    - Sending our newsletter and / or
+      advertising brochure
+    - To call or e-mail you if necessary to
+      carry out our services
+    - To inform you about changes to our
+      services and products
+    - Offer you the opportunity to create an
+      account
+    - Fissa One analyzes your behavior on
+      the Application in order to improve the
+      Application and to tailor the range of
+      products and services to your
+      preferences.
 
-Geautomatiseerde besluitvorming
-Fissa One neemt niet op basis van geautomatiseerde verwerkingen besluiten over zaken die (aanzienlijke) gevolgen kunnen hebben voor personen. Het gaat hier om besluiten die worden genomen door computerprogramma's of -systemen, zonder dat daar een mens (bijvoorbeeld een medewerker van Fissa One) tussen zit.
+Automated decision making
+Fissa One does not make decisions based on automated processing on matters that can have (significant) consequences for people. These are decisions taken by computer programs or systems, without involving a person (for example, an employee of Fissa One).
 
-Hoe lang we persoonsgegevens bewaren
+How long we keep personal data
 
-Fissa One bewaart je persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor je gegevens worden verzameld. Wij hanteren de volgende bewaartermijnen voor de volgende (categorieën) van persoonsgegevens:
+Fissa One does not store your personal data longer than is strictly necessary to realize the goals for which your data is collected. We use the following retention periods for the following (categories) of personal data:
 
-//tabel!
-Persoonsgegevenns
-    - Voor-en achternaam
-    - Geslacht
-    - Geboortedatum
-    - Telefoonnummer
-    - E-mailadres
-    - IP-adres
-    - Overige gegevens die actief verstrekt bijvoorbeeld door een profiel op deze applicatie aan te maken, in correspondentie en telefonisch
-    - Locatiegegevens
-    - Gegevens over jouw surfgedrag over verschillende applicaties heen (bijvoorbeeld omdat dit bedrijf onderdeel is van een advertentienetwerk)
-    - Internet Browser en apparaat type
+Personal data
+Retention period
+Reason
+First and last name: As long as the use of the application lasts and for the optimal functioning of the application
 
-Delen van persoonsgegevens met derden
+Sex: As long as the use of the application lasts and for the optimal functioning of the application
+Date of birth:As long as the use of the application lasts and for the optimal functioning of the application
+Phone number: As long as the use of the application lasts and for the optimal functioning of the application
+E-mail address: As long as the use of the application lasts and for the optimal functioning of the application
+IP address: As long as the use of the application lasts and for the optimal functioning of the application
+Other personal data that you actively provide, for example by creating a profile on this Application, in correspondence and by telephone: As long as the use of the application lasts and for the optimal functioning of the application
+Location data: As long as the use of the application lasts and for the optimal functioning of the application
+Data about your surfing behavior across different Applications (for example because this company is part of an advertising network).
+(will depend on who places ads)
+For displaying advertisements and offers.
+Internet Browser and device type: As long as the use of the application lasts and for the optimal functioning of the application
 
-Fissa One deelt jouw persoonsgegevens met verschillende derden als dit noodzakelijk is voor het uitvoeren van de overeenkomst en om te voldoen aan een eventuele wettelijke verplichting. Met bedrijven die je gegevens verwerken in onze opdracht, sluiten wij een bewerkersovereenkomst om te zorgen voor eenzelfde niveau van beveiliging en vertrouwelijkheid van jouw gegevens. Fissa One blijft verantwoordelijk voor deze verwerkingen. Daarnaast verstrekt Fissa One jouw persoonsgegevens aan andere derden. Dit doen wij alleen met jouw nadrukkelijke toestemming.
+Sharing personal data with third parties
 
-Alleen ping one
+Fissa One shares your personal data with various third parties if this is necessary for the execution of the agreement and to comply with any legal obligation. We conclude a processor agreement with companies that process your data on our behalf to ensure the same level of security and confidentiality of your data. Fissa One remains responsible for these processing operations. In addition, Fissa One provides your personal data to other third parties. We only do this with your express permission.
 
-Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen. Dit kun je zelf doen via de persoonlijke instellingen van jouw account. Daarnaast heb je het recht om je eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van jouw persoonsgegevens door ons bedrijf en heb je het recht op gegevensoverdraagbaarheid. Dat betekent dat je bij ons een verzoek kan indienen om de persoonsgegevens die wij van jou beschikken in een computerbestand naar jou of een ander, door jou genoemde organisatie, te sturen.
+You got the right to view, correct or delete your personal data. You can do this yourself via the personal settings of your account. In addition, you have the right to withdraw your consent to the data processing or to object to the processing of your personal data by our company and you have the right to data portability. This means that you can submit a request to us to send the personal data that we hold about you in a computer file to you or another organization mentioned by you.
 
-Wil je gebruik maken van je recht op bezwaar en/of recht op gegevensoverdraagbaarheid of heb je andere vragen/opmerkingen over de gegevensverwerking, stuur dan een gespecificeerd verzoek naar FKorzelius@fissaofficial.com.
+If you wish to exercise your right of objection and / or right to data portability or if you have other questions / comments about data processing, please send a specified request to FKorzelius@fissaofficial.com.
 
-Om er zeker van te zijn dat het verzoek tot inzage door jou is gedaan, vragen wij jou een kopie van je identiteitsbewijs bij het verzoek mee te sturen. Maak in deze kopie je pasfoto, MRZ (machine readable zone, de strook met nummers onderaan het paspoort), paspoortnummer en Burgerservicenummer (BSN) zwart. Dit ter bescherming van je privacy. Fissa One zal zo snel mogelijk, maar in ieder geval binnen vier weken, op jouw verzoek reageren.
+To ensure that the request for access has been made by you, we ask you to send a copy of your ID with the request. Make your passport photo, MRZ (machine readable zone, the strip with numbers at the bottom of the passport), passport number and citizen service number (BSN) black in this copy. This is to protect your privacy. Fissa One will respond to your request as soon as possible, but in any case within four weeks.
 
-Fissa One wil je er tevens op wijzen dat je de mogelijkheid hebt om een klacht in te dienen bij de nationale toezichthouder, de Autoriteit Persoonsgegevens. Dat kan via de volgende link: https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons
+Fissa One would also like to point out that you have the opportunity to file a complaint with the national supervisory authority, the Dutch Data Protection Authority. You can do this via the following link: https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons
 
-Hoe wij persoonsgegevens beveiligen
-Fissa One neemt de bescherming van jouw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als jij het idee hebt dat jouw gegevens toch niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact op met onze klantenservice of via FKorzelius@fissaofficial.com.
+How we protect personal data
+Fissa One takes the protection of your data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized modification. If you feel that your data is not properly secured or there are indications of abuse, please contact our customer service or via FKorzelius@fissaofficial.com.
+
 `,
             okButtonText: "Ok",
-            cancelable: false,
+            cancelable: false
         }).then(() => {
             console.log("The user closed the terms of services.");
         });
