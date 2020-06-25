@@ -20,6 +20,7 @@ export class SignUpPasswordComponent {
     constructor(private routerExtension: RouterExtensions) {
     }
 
+    //navigate to next page date of birth
     onBirth() {
         this.routerExtension.navigate(["../sign-up-birth"]);
     }

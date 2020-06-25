@@ -28,7 +28,7 @@
 
       <Button id="login" text="LOG IN" [nsRouterLink]="['/tabs/default']" ></Button>
       <Label class="forgotPassword"
-      text="Forgot password?">
+      text="Forgot password?" (tap)="forgotPassword()">
     </Label>
       <Label
         id="signup"
