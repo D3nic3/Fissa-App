@@ -1,11 +1,16 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-// import { MatchRoutingModule } from "./match-routing.module";
+
+import { MatchRoutingModule } from "./match-routing.module";
 import { MatchComponent } from "./match.component";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { MatchCardComponent } from "../match-card/match-card.component";
+import { NativeScriptRouterModule } from "nativescript-angular";
 
 @NgModule({
+    bootstrap: [
+        MatchComponent
+    ],
     imports: [
         NativeScriptCommonModule,
         // MatchRoutingModule,
@@ -17,11 +22,12 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
         ])
     ],
     declarations: [
-        MatchComponent
+        MatchComponent,
+        MatchCardComponent
     ],
     providers: [],
     schemas: [
         NO_ERRORS_SCHEMA
     ]
 })
-export class MatchModule { }
+export class AppModule { }

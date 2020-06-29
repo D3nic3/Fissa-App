@@ -1,0 +1,34 @@
+<Label text="No more people to swipe" [visibility]="noMorePeopleSignVisibility" id="NoMorePeople"></Label>
+<ScrollView (doubleTap)="likePerson()" [visibility]="cardVisibility">
+    <GridLayout [style]="cardStyle">
+        <AbsoluteLayout class="stripes">
+            <WrapLayout class="signs">
+                <Image class="alcoholStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeAlcoholOn"></Image>
+                <Image class="wietStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeWeedOn"></Image>
+                <Image class="drugsStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeDrugsOn"></Image>
+            </WrapLayout>
+        </AbsoluteLayout>
+
+        <StackLayout>
+            <Image class="personImg" stretch="aspectFill" [src]='personImg'></Image>
+            <Label class="personName" [text]="personName"></Label>
+
+            <WrapLayout>
+                <Image class='alcoholSign signicon' src='~/assets/img/alcohol.png'></Image>
+                <Image class='wietSign signicon' src='~/assets/img//weed.png'></Image>
+                <Image class='drugsSign signicon' src='~/assets/img/pills.png'></Image>
+            </WrapLayout>
+
+            <StackLayout class='line'></StackLayout>
+            <Label textWrap="true" class="personBio" [text]="personBio"></Label>
+            <StackLayout class='line'></StackLayout>
+            <StackLayout class="declineButton" (tap)="dislikePerson();">
+                <Image src='~/assets/img/cross.png'></Image>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+</ScrollView>
+
+<!-- <AbsoluteLayout [style]="showThumb">
+    <Image class="thumb-up" src='~/assets/img/thumbup.png'></Image>
+</AbsoluteLayout> -->

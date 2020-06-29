@@ -1,15 +1,18 @@
 import { Component, OnInit } from "@angular/core";
+import { Page } from "tns-core-modules/ui/page";
 
 @Component({
     selector: "Match",
-    templateUrl: "./match.component.html"
+    templateUrl: "./match.component.html",
+    styleUrls: ["./match.css"]
 })
 export class MatchComponent implements OnInit {
-    constructor() {
-        // Use the component constructor to inject providers.
+
+    constructor(private page: Page) {
+
     }
 
     ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
+        // Init your component properties here.
     }
 }
