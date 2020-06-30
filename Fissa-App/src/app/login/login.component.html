@@ -9,6 +9,7 @@
       <Label id="label" text="Log in to get back to the party!"></Label>
     </StackLayout>
 
+    <!-- email input-->
     <StackLayout>
       <TextField
         hint="Email"
@@ -19,23 +20,33 @@
       >
       </TextField>
 
+      <!-- password input -->
       <TextField
         hint="Password"
         secure="true"
         class="input input-border"
       ></TextField>
 
+      <!-- onclick alert forgot password-->
+      <Button
+        id="login"
+        text="LOG IN"
+        [nsRouterLink]="['/tabs/default']"
+      ></Button>
+      <Label
+        class="forgotPassword"
+        text="Forgot password?"
+        (tap)="forgotPassword()"
+      >
+      </Label>
 
-      <Button id="login" text="LOG IN" [nsRouterLink]="['/tabs/default']" ></Button>
-      <Label class="forgotPassword"
-      text="Forgot password?" (tap)="forgotPassword()">
-    </Label>
+      <!-- navigate to welcome page -->
       <Label
         id="signup"
         text="Don't have an account? Sign up"
         (tap)="onNavigateWelcome()"
       >
-</Label>
+      </Label>
     </StackLayout>
   </StackLayout>
 </FlexboxLayout>

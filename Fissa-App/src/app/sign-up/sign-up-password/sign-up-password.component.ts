@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
-
 
 @Component({
     selector: "SignUpPassword",
@@ -9,21 +8,16 @@ import { RouterExtensions } from "nativescript-angular/router";
     styleUrls: ["./sign-up-password.component.css"]
 })
 export class SignUpPasswordComponent {
-
     // hide show password
     pwdSecure = true;
     confirmPwdSecure = true;
     pwdSecures = true;
     confirmPwdSecures = true;
 
-    // implements OnInit
-    constructor(private routerExtension: RouterExtensions) {
-    }
+    constructor(private routerExtension: RouterExtensions) {}
 
-    //navigate to next page date of birth
+    // navigate to next page date of birth
     onBirth() {
         this.routerExtension.navigate(["../sign-up-birth"]);
     }
-
-
 }
