@@ -7,7 +7,7 @@ import { Page } from "tns-core-modules/ui/page";
 })
 export class MatchPageComponent implements OnInit {
     constructor(private page: Page) {
-        this.page.actionBarHidden = true;
+        // this.page.actionBarHidden = true;
     }
 
     ngOnInit(): void {

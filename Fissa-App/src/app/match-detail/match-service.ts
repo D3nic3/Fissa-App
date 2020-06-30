@@ -27,10 +27,12 @@ export class MatchService {
     constructor(private http: HttpClient) {
     }
 
+    //Alle mensen behalve jezelf die naar die evenement gaan --User moet nog de ingelogde gebruiker worden en events moet nog de evenement waar je naar toe gaat worden
     getItems(): Observable<DataItem[]> {
          return this.http.get<DataItem[]>("http://192.168.99.1:8005/users/1/events/1");
             }
 
+    //De persoon die je mag gaan oordelen
     getItem(userID: number): Observable<DataItem> {
         return this.http.get<DataItem>("http://192.168.99.1:8005/users/" + userID);
             }

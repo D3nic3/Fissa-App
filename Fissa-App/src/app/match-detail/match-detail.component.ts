@@ -47,9 +47,9 @@ export class MatchComponent implements OnInit {
         this.loadNextPerson();
     }
 
+    
+    //Laad de volgende persoon in de observable lijst om te liken/disliken --Er moet nog een check komen of er nog mensen zijn om te oordelen --NIET KLAAR--
     loadNextPerson() {
-     
-
         if(this.morePeople == true){
         this.personIndex++;
 
@@ -76,6 +76,7 @@ export class MatchComponent implements OnInit {
 
     }
 
+    //Liken of disliken --Er moet nog een functie komen voor als je een match hebt
     addOordeel(beoordeelde_gebruiker, is_like) {
         fetch("http://192.168.99.1:8005/oordeels/", {
             method: "POST",
@@ -98,6 +99,7 @@ export class MatchComponent implements OnInit {
                 }));
     }
 
+    //Iemand liken -- Er moet nog een animatie komen
     likePerson() {
         // const i = this.personIndex;
         // this.showThumb = "opacity:1;";
@@ -123,14 +125,15 @@ export class MatchComponent implements OnInit {
         // animInterval;
     }
 
+    //Iemand disliken
     dislikePerson() {
         // const i = this.personIndex;
         this.addOordeel(this.personIndex, false);
         this.doSwipe();
     }
 
+    //Animatie voor als je naar de volgende persoon gaat
     doSwipe() {
-        // this.loadNextPerson();
         this.cardStyle = "transform: translate(0, 0);";
         this.animIndex = 0;
 
