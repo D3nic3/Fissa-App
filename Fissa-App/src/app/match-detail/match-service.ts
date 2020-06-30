@@ -1,31 +1,39 @@
-// import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { SearchBar } from "tns-core-modules/ui/search-bar";
+import { ObservableArray } from "tns-core-modules/data/observable-array/observable-array";
 
-// @Injectable({
-//     providedIn: "root"
-// })
-// export class MatchService {
-//     private response = [
-//         {
-//             "id": 1,
-//             "email": "mallo@mail.com",
-//             "username": "mallo",
-//             "firstname": "mallo",
-//             "lastname": "troum",
-//             "birthdate": "1997-03-15",
-//             "picture": null,
-//             "biography": "Lorem ipsum",
-//             "drugs": false,
-//             "alcohol": false,
-//             "wiet": false,
-//             "gender": "man",
-//             "groups": [],
-//             "messages": [],
-//             "events": [],
-//             "tijdelijkeAanbevelingsPunten": 0
-//         }
-//     ];
+export interface DataItem {
+    userID: number;
+    email: string;
+    username: string;
+    firstname: string;
+    lastname: string;
+    birthdate: string;
+    picture: string;
+    biography: string;
+    drugs: string;
+    alcohol: string;
+    wiet: string;
+    gender: string;
+    
+}
 
-//     getResponse() {
-//         return this.response;
-//     }
-// }
+@Injectable({
+    providedIn: "root"
+})
+export class MatchService {
+    constructor(private http: HttpClient) {
+    }
+
+    getItems(): Observable<DataItem[]> {
+         return this.http.get<DataItem[]>("http://192.168.99.1:8005/users/1/events/1");
+            }
+
+    getItem(userID: number): Observable<DataItem> {
+        return this.http.get<DataItem>("http://192.168.99.1:8005/users/" + userID);
+            }
+    
+}
+

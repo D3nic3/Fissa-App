@@ -1,5 +1,5 @@
-<Label text="No more people to swipe" [visibility]="noMorePeopleSignVisibility" id="NoMorePeople"></Label>
-<ScrollView (doubleTap)="likePerson()" [visibility]="cardVisibility">
+<!-- <Label text="No more people to swipe" [visibility]="noMorePeopleSignVisibility" id="NoMorePeople"></Label> -->
+<ScrollView (doubleTap)="likePerson()">
     <GridLayout [style]="cardStyle">
         <AbsoluteLayout class="stripes">
             <WrapLayout class="signs">
@@ -11,7 +11,7 @@
 
         <StackLayout>
             <Image class="personImg" stretch="aspectFill" [src]='personImg'></Image>
-            <Label class="personName" [text]="personName"></Label>
+            <Label class="personName" [text]="item.username"></Label>
 
             <WrapLayout>
                 <Image class='alcoholSign signicon' src='~/assets/img/alcohol.png'></Image>
@@ -20,7 +20,7 @@
             </WrapLayout>
 
             <StackLayout class='line'></StackLayout>
-            <Label textWrap="true" class="personBio" [text]="personBio"></Label>
+            <Label textWrap="true" class="personBio" [text]="item.biography"></Label>
             <StackLayout class='line'></StackLayout>
             <StackLayout class="declineButton" (tap)="dislikePerson();">
                 <Image src='~/assets/img/cross.png'></Image>
