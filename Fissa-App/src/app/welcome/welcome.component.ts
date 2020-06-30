@@ -7,31 +7,30 @@ import { alert } from "tns-core-modules/ui/dialogs";
     selector: "Welcome",
     moduleId: module.id,
     templateUrl: "./welcome.component.html",
-    styleUrls: ["./welcome.component.css"],
+    styleUrls: ["./welcome.component.css"]
 })
 export class WelcomeComponent implements OnInit {
     // constructor(private location: Location) {}
     constructor(private routerExtension: RouterExtensions) {}
 
+    // tslint:disable-next-line: no-empty
     ngOnInit(): void {}
 
-    // goBack(): void {
-    //     this.location.back();
-    // }
-
+    // navigate to login page
     onLogin() {
         this.routerExtension.navigate(["../login"], { clearHistory: true });
     }
 
+    // navigate to sign up page
     onSignin() {
         this.routerExtension.navigate(["../sign-up"]);
     }
 
+    // terms of services
     alert() {
         alert({
             title: "Terms of services",
-            message:
-`Fissa One, located at Triangelstraat 76, is responsible for the processing of personal data as shown in this privacy statement.
+            message: `Fissa One, located at Triangelstraat 76, is responsible for the processing of personal data as shown in this privacy statement.
 
 Contact details:
 https://fissaofficial.com/

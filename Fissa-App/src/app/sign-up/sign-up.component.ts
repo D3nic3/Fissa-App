@@ -10,6 +10,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 export class SignUpComponent {
     constructor(private routerExtension: RouterExtensions) {}
 
+    // navigate to email page
     onEmail() {
         this.routerExtension.navigate(["../sign-up-email"]);
     }

@@ -12,29 +12,31 @@ import { alert, prompt } from "tns-core-modules/ui/dialogs";
 export class LoginComponent {
     constructor(private routerExtension: RouterExtensions) {}
 
-    //sign up navigate to welcomepage
+    // sign up navigate to welcomepage
     onNavigateWelcome() {
         this.routerExtension.navigate(["../welcome"], { clearHistory: true });
     }
 
-    //function forget password loggin
+    // function forget password loggin
     forgotPassword() {
-  prompt({
-    title: "Forgot Password",
-    message: "Enter the email address you used to register for FISSA to reset your password.",
-    defaultText: "",
-    okButtonText: "Ok",
-    cancelButtonText: "Cancel"
-  }).then((data) => {
-    if (data.result) {
-      // Call the backend to reset the password
-      alert({
-        title: "FISSA",
-        message: "Your password was successfully reset. Please check your email for instructions on choosing a new password.",
-        okButtonText: "Ok",
-        cancelable: false
-      });
+        prompt({
+            title: "Forgot Password",
+            message:
+                "Enter the email address you used to register for FISSA to reset your password.",
+            defaultText: "",
+            okButtonText: "Ok",
+            cancelButtonText: "Cancel"
+        }).then((data) => {
+            if (data.result) {
+                // Call the backend to reset the password
+                alert({
+                    title: "FISSA",
+                    message:
+                        "Your password was successfully reset. Please check your email for instructions on choosing a new password.",
+                    okButtonText: "Ok",
+                    cancelable: false
+                });
+            }
+        });
     }
-  });
-}
 }
