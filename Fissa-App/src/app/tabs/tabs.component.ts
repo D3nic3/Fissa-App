@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 
@@ -13,13 +13,24 @@ export class TabsComponent implements OnInit {
 
     constructor(
         private routerExtension: RouterExtensions,
-        private activeRoute: ActivatedRoute) {
-        // Use the component constructor to inject providers.
-    }
+        private activeRoute: ActivatedRoute
+    ) {}
 
+    // navigate to the app
     ngOnInit() {
-        // Use the "ngOnInit" handler to initialize data for the view.
-        this.routerExtension.navigate([{ outlets:
-            { festivalTab: ["festival"], friendTab: ["friend"], matchTab: ["match"], chatTab: ["chat"], profileTab: ["profile"] } }], { relativeTo: this.activeRoute });
+        this.routerExtension.navigate(
+            [
+                {
+                    outlets: {
+                        festivalTab: ["festival"],
+                        friendTab: ["friend"],
+                        matchTab: ["match"],
+                        chatTab: ["chat"],
+                        profileTab: ["profile"]
+                    }
+                }
+            ],
+            { relativeTo: this.activeRoute }
+        );
     }
 }
