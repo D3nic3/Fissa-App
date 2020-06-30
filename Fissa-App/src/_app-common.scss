@@ -50,8 +50,9 @@ StackLayout {
   &:active,
   &:active Label {
     @include colorize($contrasted-color: complementary background 20% 0%);
-    color: #db4f27;
-    background-color: #ffffff;
+    // color: #db4f27;
+    color: #000000;
+    background-color: #DB643D;
   }
 }
 

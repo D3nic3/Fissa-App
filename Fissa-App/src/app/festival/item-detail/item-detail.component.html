@@ -1,21 +1,27 @@
 <ActionBar>
-    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
-    <Label [text]="item.evenementNaam"></Label>
+  <NavigationButton
+    (tap)="onBackTap()"
+    android.systemIcon="ic_menu_back"
+  ></NavigationButton>
+  <Label [text]="item.evenementNaam"></Label>
 </ActionBar>
 
+<!-- showing details of events -->
 <ScrollView>
-<StackLayout *ngIf="item" class="festivalInfo" >
+  <StackLayout *ngIf="item" class="festivalInfo">
     <Image src="res://icon" class="festivalImg"></Image>
 
-    <Label class="m-10 h3" verticalAlignment="top" [text]="item.evenementNaam"></Label>
+    <Label
+      class="m-10 h3"
+      verticalAlignment="top"
+      [text]="item.evenementNaam"
+    ></Label>
 
-    <Button text="I'm going" class="going" (tap)="onMatch()"
-
-
-    ></Button>
-
+    <Button text="I'm going" class="going"></Button>
+    <!-- (tap)="onMatch()" -->
     <!-- [nsRouterLink]="['/tabs/default', {outlets: { matchTab: ['match'] }}]" -->
 
+    <!-- hr dividing line -->
     <StackLayout class="hr"></StackLayout>
     <Label class="h3" text="Start date"></Label>
     <Label [text]="item.beginDatum" height="50"></Label>
@@ -26,25 +32,49 @@
     <Label class="h3" text="Festival status"></Label>
     <Label [text]="item.status" height="50"></Label>
 
-    <Label class="h3"  text="City"></Label>
+    <Label class="h3" text="City"></Label>
     <Label [text]="item.stad" height="50"></Label>
 
     <StackLayout class="hr"></StackLayout>
 
     <StackLayout>
-    <Label class="h3" text="Friends"></Label>
-    <StackLayout orientation="horizontal">
-    <Image src="res://icon" class="festivalImg" width="100" height="100" ></Image>
-    <Image src="res://icon" class="festivalImg" width="100" height="100" ></Image>
-    <Image src="res://icon" class="festivalImg" width="100" height="100" ></Image>
-    <Image src="res://icon" class="festivalImg" width="100" height="100" ></Image>
+      <Label class="h3" text="Friends"></Label>
+      <StackLayout orientation="horizontal">
+        <Image
+          src="res://icon"
+          class="festivalImg"
+          width="100"
+          height="100"
+        ></Image>
+        <Image
+          src="res://icon"
+          class="festivalImg"
+          width="100"
+          height="100"
+        ></Image>
+        <Image
+          src="res://icon"
+          class="festivalImg"
+          width="100"
+          height="100"
+        ></Image>
+        <Image
+          src="res://icon"
+          class="festivalImg"
+          width="100"
+          height="100"
+        ></Image>
+      </StackLayout>
     </StackLayout>
-</StackLayout>
 
     <StackLayout class="hr"></StackLayout>
 
+<!-- Button going to map page -->
     <Label class="h3" text="Maps"></Label>
-    <Image src="~/assets/img/map.png" class="festivalImg" (tap)="onMap()" ></Image>
-</StackLayout>
+    <Image
+      src="~/assets/img/map.png"
+      class="festivalImg"
+      (tap)="onMap()"
+    ></Image>
+  </StackLayout>
 </ScrollView>
-

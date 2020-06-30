@@ -1,67 +1,44 @@
-<!-- observable http -->
+<!--ActionBar needs to be empty otherwise it will be the name of the file -->
+<ActionBar title=""></ActionBar>
 
-    <ActionBar title=""></ActionBar>
+<!-- Searchbar events -->
+<StackLayout (loaded)="onSearchLoaded($event)">
+  <SearchBar
+    [text]="searchPhrase"
+    (loaded)="onSearchBarLoaded($event)"
+  ></SearchBar>
+  <!-- (textChange)="onTextChanged($event)"
+  (clear)="onClear($event)"
+  (submit)="onSubmit($event)"
+   -->
 
-<input [(ngModel)]="searchTerm" (ngModelChange)="onSearchTermChange()" />
-<StackLayout>
+  <!-- <ActivityIndicator [busy]="isBusy" (busyChange)="onBusyChanged($event) "></ActivityIndicator> -->
 
-<!-- <SearchBar
-            [text]="searchPhrase"
-            (textChange)="onTextChanged($event)"
-            (clear)="onClear($event)" (submit)="onSubmit($event)">
+  <!-- Loading events -->
+  <StackLayout>
+    <ListView
+      [items]="items$ | async"
+      loadOnDemandMode="Auto"
+      loadOnDemandBufferSize="5"
+      height="500"
+      rowHeight="200"
+      separatorColor="#DB4F27"
+    >
+      <!-- <ActivityIndicator [busy]="false"></ActivityIndicator> -->
 
-</SearchBar> -->
-
-<SearchBar type="text" [formControl]="filter" hint="Search for an event.."></SearchBar>
-
-<!-- <ActivityIndicator [busy]="isBusy" (busyChange)="onBusyChanged($event) "></ActivityIndicator> -->
-<StackLayout >
-
-  <!-- loadMoreDataRequested="{{onLoadMoreItemsRequested}}" -->
-    <ListView [items]="items$ |async"
-    loadOnDemandMode="Auto"
-    loadOnDemandBufferSize="5"
-    height="500" rowHeight="200" separatorColor="#DB4F27"
-     >
-     <ActivityIndicator [busy]="false"></ActivityIndicator>
-        <ng-template let-item="item">
-            <StackLayout class="festivalList">
-                <Label [nsRouterLink]="['../item', item.evenementID]" [text]="item.evenementNaam"></Label>
-                <Image src="res://icon" class="imgListFestival"></Image>
-                <Label [text]="item.beginDatum" class="labelFestival"></Label>
-                <Label [text]="item.stad" class="labelFestival"></Label>
-            </StackLayout>
-        </ng-template>
+      <ng-template let-item="item">
+        <StackLayout class="festivalList">
+          <Label
+            [nsRouterLink]="['../item', item.evenementID]"
+            [text]="item.evenementNaam"
+          ></Label>
+          <Image src="res://icon" class="imgListFestival"></Image>
+          <Label [text]="item.beginDatum" class="labelFestival"></Label>
+          <Label [text]="item.stad" class="labelFestival"></Label>
+        </StackLayout>
+      </ng-template>
     </ListView>
+
     <!-- <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" height="100" width="100" color="red" backgroundColor="gray" class="spinner"></ActivityIndicator> -->
+  </StackLayout>
 </StackLayout>
-</StackLayout>
-
-<!-- hardcoded -->
-<!-- <ActionBar>
-    <Label text="Festival"></Label>
-</ActionBar>
-
-<StackLayout>
-
-<SearchBar
-            [text]="searchPhrase"
-             (textChange)="onTextChanged($event)"
-            (clear)="onClear($event)" (submit)="onSubmit($event)">
-</SearchBar>
-
-<StackLayout>
-    <ListView [items]="items" height="500" rowHeight="200" separatorColor="#DB4F27" >
-        <ng-template let-item="item">
-            <StackLayout class="festivalList">
-                <Label [nsRouterLink]="['../item', item.evenementID]" [text]="item.evenementNaam"></Label>
-                <Image src="res://icon" class="imgListFestival"></Image>
-                <Label [text]="item.evenementNaam" class="labelFestival"></Label>
-                <Label [text]="item.beginDatum" class="labelFestival"></Label>
-                <Label [text]="item.stad" class="labelFestival"></Label>
-
-            </StackLayout>
-        </ng-template>
-    </ListView>
-</StackLayout>
-</StackLayout> -->

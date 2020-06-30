@@ -1,15 +1,16 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-    moduleId: module.id,
     selector: "tabs-page",
+    moduleId: module.id,
     templateUrl: "./tabs.component.html",
     styleUrls: ["./tabs.component.css"]
 })
-export class TabsComponent {
-    // implements OnInit
+export class TabsComponent implements OnInit {
+    // @ViewChild("tabStrip") tabStrip: ElementRef;
+
     constructor(
         private routerExtension: RouterExtensions,
         private activeRoute: ActivatedRoute) {
