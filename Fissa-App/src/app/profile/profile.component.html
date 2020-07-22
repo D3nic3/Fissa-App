@@ -1,8 +1,54 @@
-<ActionBar>
-    <Label text="Profile"></Label>
-</ActionBar>
+<ActionBar title="Profiel"></ActionBar>
+  <ScrollView>
+    <GridLayout>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf002;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Search page content goes here -->"></Label>
-</GridLayout>
+			<StackLayout class="btn-img" (tap)="onTakePictureTap($event)" >
+					<Image class="imgphoto" src='~/assets/img/camera.png' width="85%" height="85%" marginRight="10"></Image>
+			</StackLayout>
+
+
+			<StackLayout class="personinfo" orientation="vertical">
+				<!-- <Image class ="personImg" stretch="aspectFill" [src]='item.picture'></Image> -->
+				<Label class="personName" [text]="item.firstname"></Label>
+
+				<StackLayout class='line'></StackLayout>
+					<Label textWrap="true" class="personBio" [text]="item.biography"></Label>
+				<StackLayout class='line'></StackLayout>
+
+			</StackLayout>
+
+			<WrapLayout class="icons">
+				<Image class='alcoholSign signicon' src='~/assets/img/alcohol.png' (tap)="tappedAlcohol()"></Image>
+				<Image class='wietSign signicon' src='~/assets/img/weed.png' (tap)="tappedWeed()"></Image>
+				<Image class='drugsSign signicon' src='~/assets/img/pills.png' (tap)="tappedPills()"></Image>
+			</WrapLayout>
+
+			<AbsoluteLayout class="stripes">
+				<WrapLayout class="signs">
+					<Image class="alcoholStripe stripe" src='~/assets/img/red_stripe.png'></Image>
+					<Image class="wietStripe stripe" src='~/assets/img/red_stripe.png'></Image>
+					<Image class="drugsStripe stripe" src='~/assets/img/red_stripe.png'></Image>
+				</WrapLayout>
+			</AbsoluteLayout>
+
+			<StackLayout class="interests" orientation="vertical">
+				<Stacklayout class="title" orientation="horizontal" horizontalAlignment="center">
+					<label [text]="item.username"></label>
+					<label text=" Likes" textWrap="true"></label>
+				</Stacklayout>
+
+				<Stacklayout orientation="horizontal" horizontalAlignment="center">
+					<label class="genre" text="Pop"></label>
+					<label class="genre" text="Rock"></label>
+					<label class="genre" text="R&B"></label>
+					<label class="genre" text="PopRock"></label>
+				</Stacklayout>
+			</StackLayout>
+
+    </GridLayout>
+  </ScrollView>
+
+
+
+
+

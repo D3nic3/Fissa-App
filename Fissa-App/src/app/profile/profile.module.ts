@@ -9,7 +9,6 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
     imports: [
         NativeScriptCommonModule,
         ProfileRoutingModule,
-        // test
         NativeScriptRouterModule,
         NativeScriptRouterModule.forChild([
             { path: "", redirectTo: "profile" },
