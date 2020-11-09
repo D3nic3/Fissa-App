@@ -1,4 +1,17 @@
-<ActionBar title="Profiel"></ActionBar>
+<ActionBar>
+  <Label text="Profiel"></Label>
+</ActionBar>
+
+<GridLayout>
+  <StackLayout>
+		<Label class="userProfileUsername" [text]="userprofile.username"></Label>
+	</StackLayout>
+</GridLayout>
+
+
+<!-- old / mine code
+
+	<ActionBar title="Profiel"></ActionBar>
   <ScrollView>
     <GridLayout>
 
@@ -6,16 +19,36 @@
 					<Image class="imgphoto" src='~/assets/img/camera.png' width="85%" height="85%" marginRight="10"></Image>
 			</StackLayout>
 
-
 			<StackLayout class="personinfo" orientation="vertical">
-				<!-- <Image class ="personImg" stretch="aspectFill" [src]='item.picture'></Image> -->
+				#<Image class ="personImg" stretch="aspectFill" [src]='item.picture'></Image>
 				<Label class="personName" [text]="item.firstname"></Label>
+
 
 				<StackLayout class='line'></StackLayout>
 					<Label textWrap="true" class="personBio" [text]="item.biography"></Label>
 				<StackLayout class='line'></StackLayout>
-
 			</StackLayout>
+			<ListView
+				[items]="items$ | async"
+				loadOnDemandMode="Auto"
+				loadOnDemandBufferSize="5"
+				height="500"
+				rowHeight="200"
+				separatorColor="#DB4F27"
+			>
+				<ng-template let-item="item">
+					<GridLayout class="personinfo" orientation="vertical">
+						<Image class ="personImg" stretch="aspectFill" [src]='item.picture'></Image>
+						<Label class="personName" [text]="item.firstname"></Label>
+
+
+						<StackLayout class='line'></StackLayout>
+							<Label textWrap="true" class="personBio" [text]="item.biography"></Label>
+						<StackLayout class='line'></StackLayout>
+
+					</GridLayout>
+				</ng-template>
+			</ListView>
 
 			<WrapLayout class="icons">
 				<Image class='alcoholSign signicon' src='~/assets/img/alcohol.png' (tap)="tappedAlcohol()"></Image>
@@ -47,8 +80,4 @@
 
     </GridLayout>
   </ScrollView>
-
-
-
-
-
+ -->

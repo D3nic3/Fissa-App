@@ -1,33 +1,20 @@
+import { ProfileItem } from "./profile";
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
-export interface DataItem {
-  userID: number;
-  email: string;
-  username: string;
-  firstname: string;
-  lastname: string;
-  birthdate: string;
-  picture: string;
-  biography: string;
-  drugs: string;
-  alcohol: string;
-  wiet: string;
-  gender: string;
-}
-
-@Injectable({
-    providedIn: "root"
-})
-
+@Injectable()
 export class ProfileService {
-  constructor(private http: HttpClient) {}
+  private userUrl: string = "http://127.0.0.1:8005/users/1";
+
+  constructor(private http: HttpClient) {
+  }
 
   // function get data events
-  getItems(): Observable<Array<DataItem>> {
-    return this.http.get<Array<DataItem>>(
-      "http://192.168.178.111:8005/users/1"
+  getItems(): Observable<ProfileItem> {
+    return this.http.get<ProfileItem>(
+        this.userUrl
     );
   }
 }

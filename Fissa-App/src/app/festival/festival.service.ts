@@ -22,8 +22,8 @@ export class FestivalService {
     constructor(private http: HttpClient) {}
 
     // function get data events
-    getItems(): Observable<DataItem[]> {
-        return this.http.get<DataItem[]>(
+    getItems(): Observable<Array<DataItem>> {
+        return this.http.get<Array<DataItem>>(
             "http://192.168.2.8:6666/evenement?pageNr=1"
         );
     }
