@@ -1,8 +1,5 @@
-import { ProfileItem } from "./profile";
-
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
 
 @Injectable()
 export class ProfileService {
@@ -11,10 +8,37 @@ export class ProfileService {
   constructor(private http: HttpClient) {
   }
 
-  // function get data events
+  getUsers() {
+    return this.http.get(this.userUrl);
+  }
+
+}
+
+/*function get data events
   getItems(): Observable<ProfileItem> {
     return this.http.get<ProfileItem>(
         this.userUrl
     );
   }
-}
+
+  getUsers(): Observable<Array<User>> {
+    return this.http.get(this.userUrl).pipe(map((response: Response) => <Array<User>>HttpResponse.json()));
+  }
+
+    private extractData(res: Response) {
+    const body = res.json();
+
+    return body.data || { };
+  }
+
+  private handleError(error: any) {
+    // In a real world app, we might use a remote logging infrastructure
+    // We'd also dig deeper into the error to get a better message
+    const errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : "Server error";
+    console.error(errMsg);
+
+    return Observable.throw(errMsg);
+  }
+
+  */

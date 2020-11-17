@@ -4,13 +4,11 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { ProfileComponent } from "./profile.component";
 
-const routes: Routes = [
-    // { path: "", redirectTo: "profile" },
-    { path: "profile", component: ProfileComponent }
-];
+const routes: Routes = [{ path: "default", component: ProfileComponent }];
 
 @NgModule({
     imports: [NativeScriptRouterModule.forChild(routes)],
     exports: [NativeScriptRouterModule]
 })
+
 export class ProfileRoutingModule { }

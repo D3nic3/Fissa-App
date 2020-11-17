@@ -1,50 +1,49 @@
 import { ProfileService } from "./profile.service";
-import { ProfileItem } from "./profile";
 
 import { Component, OnInit } from "@angular/core";
 import { takePicture, requestPermissions } from "nativescript-camera";
 import { ImageAsset } from "tns-core-modules/image-asset";
-import { Observable } from "rxjs";
 
 @Component({
   selector: "Profile",
   moduleId: module.id,
-  templateUrl: "./profile.component.html",
-  styleUrls: ["./profile.component.css"]
+  templateUrl: "./profile.component.html"
 })
 
 export class ProfileComponent implements OnInit {
-  saveToGallery: boolean = true;
-  cameraImage: ImageAsset;
-  userprofile: ProfileItem;
-  constructor(private profileService: ProfileService) { }
+    /*saveToGallery: boolean = true;
+    cameraImage: ImageAsset;*/
+    users: any = [];
+    constructor(private profileservice: ProfileService) {}
 
-  ngOnInit() {
-    this.profileService.getItems().subscribe((userprofile) => {
-        this.userprofile = userprofile;
-    });
-  }
+    ngOnInit() {
+        this.profileservice.getUsers().subscribe((data: any) => {
+            this.users = data;
 
-  tappedAlcohol() {
+            console.log("Users", this.users);
+          });
+    }
+
+    tappedAlcohol() {
     console.log("Alcohol");
   }
 
-  tappedPills() {
+    tappedPills() {
     console.log("Pills");
   }
 
-  tappedWeed() {
+    tappedWeed() {
       console.log("Weed");
   }
 
-  onTakePictureTap(args) {
+    /*onTakePictureTap(args) {
     requestPermissions().then(
       () => this.capture(),
       () => alert("permissions rejected")
     );
   }
 
-  capture() {
+    capture() {
     takePicture({ width: 250, height: 300, keepAspectRatio: true, saveToGallery: this.saveToGallery })
       .then((imageAsset: any) => {
         this.cameraImage = imageAsset;
@@ -68,5 +67,5 @@ export class ProfileComponent implements OnInit {
           }, (error) => {
             console.log("Error: " + error);
       });
-  }
+  }*/
 }

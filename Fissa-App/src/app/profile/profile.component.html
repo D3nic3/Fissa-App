@@ -1,12 +1,16 @@
-<ActionBar>
-  <Label text="Profiel"></Label>
-</ActionBar>
+<ActionBar title="Profiel"></ActionBar>
+
 
 <GridLayout>
-  <StackLayout>
-		<Label class="userProfileUsername" [text]="userprofile.username"></Label>
-	</StackLayout>
+	<ScrollView>
+		<StackLayout class="home-panel">
+			<!--Add your page content here-->
+			<Label textWrap="true" text="Play with NativeScript!" class="h2 description-label"></Label>
+			<Label textWrap="true" [text]="users.username" class="h2 description-label"></Label>
+		</StackLayout>
+	</ScrollView>
 </GridLayout>
+
 
 
 <!-- old / mine code

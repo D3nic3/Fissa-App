@@ -1,4 +1,4 @@
-export class ProfileItem {
+export interface User {
   userID: number;
   email: string;
   username: string;
@@ -11,5 +11,4 @@ export class ProfileItem {
   alcohol: boolean;
   wiet: boolean;
   gender: string;
-  groups: [];
 }

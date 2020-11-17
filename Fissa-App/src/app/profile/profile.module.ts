@@ -9,7 +9,12 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        NativeScriptRouterModule
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forChild([
+            { path: "", redirectTo: "profile" },
+            { path: "profile", component: ProfileComponent }
+        ]),
+        ProfileRoutingModule
     ],
     declarations: [
         ProfileComponent
