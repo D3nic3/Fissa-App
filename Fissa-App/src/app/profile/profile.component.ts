@@ -4,10 +4,6 @@ import { User } from "./profile";
 import { Component, OnInit } from "@angular/core";
 import { takePicture, requestPermissions } from "nativescript-camera";
 import { ImageAsset } from "tns-core-modules/image-asset";
-import { Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
-import { DataItem } from "../festival/festival.service";
 
 @Component({
   selector: "Profile",
@@ -19,19 +15,36 @@ import { DataItem } from "../festival/festival.service";
 })
 
 export class ProfileComponent implements OnInit {
-    /*saveToGallery: boolean = true;
-    cameraImage: ImageAsset;*/
+    saveToGallery: boolean = true;
+    cameraImage: ImageAsset;
     user: User;
+    stripeAlcoholOn = "opacity:0;";
+    stripeWeedOn = "opacity:0;";
+    stripeDrugsOn = "opacity:0;";
+
     constructor(private profileservice: ProfileService) {
     }
 
     ngOnInit() {
-        this.profileservice.findAll().subscribe((data) => {
-            this.user = data;
-            console.log(data);
-        }, (error) => {
-            console.log(error.error);
-        });
+      this.userData();
+    }
+
+    userData() {
+      this.profileservice.findAll().subscribe((data) => {
+        this.user = data;
+
+        if (!this.user.alcohol) {
+          this.stripeAlcoholOn = "opacity:1;";
+          }
+        if (!this.user.wiet) {
+          this.stripeWeedOn = "opacity:1;";
+          }
+        if (!this.user.drugs) {
+          this.stripeDrugsOn = "opacity:1;";
+          }
+      }, (error) => {
+        console.log(error.error);
+      });
     }
 
     tappedAlcohol() {
@@ -46,12 +59,12 @@ export class ProfileComponent implements OnInit {
       console.log("Weed");
     }
 
-    /*onTakePictureTap(args) {
-    requestPermissions().then(
-      () => this.capture(),
-      () => alert("permissions rejected")
-    );
-  }
+    onTakePictureTap(args) {
+        requestPermissions().then(
+            () => this.capture(),
+            () => alert("permissions rejected")
+        );
+    }
 
     capture() {
     takePicture({ width: 250, height: 300, keepAspectRatio: true, saveToGallery: this.saveToGallery })
@@ -77,5 +90,5 @@ export class ProfileComponent implements OnInit {
           }, (error) => {
             console.log("Error: " + error);
       });
-  }*/
+  }
 }

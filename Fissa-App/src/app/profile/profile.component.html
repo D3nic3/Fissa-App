@@ -1,27 +1,32 @@
 <ActionBar title="Profile"></ActionBar>
 
-
 <GridLayout>
-    <StackLayout class="backgroundapp">
-        <Label [text]="user.username" textWrap="true" class="username"></Label>
+	<!--
+		Doens't work yet
+		<StackLayout class="btn-img" (tap)="onTakePictureTap($event)" >
+		<Image class="imgphoto" src='~/assets/img/camera.png'></Image>
+	</StackLayout> -->
 
-        <Label [text]="user.biography" textWrap="true" class="biography"></Label>
-        <StackLayout class='line'></StackLayout>
-    </StackLayout>
+	<StackLayout class="backgroundapp">
+		<Image src='~/assets/img/alcohol.png' stretch="aspectFill" class ="personImg"></Image>
+		<Label [text]="user.username" textWrap="true" class="username"></Label>
+		<Label [text]="user.biography" textWrap="true" class="biography"></Label>
+		<StackLayout class='line'></StackLayout>
+	</StackLayout>
 
-    <WrapLayout class="icons">
-        <Image class='alcoholSign signicon' src='~/assets/img/alcohol.png' (tap)="tappedAlcohol()"></Image>
-        <Image class='wietSign signicon' src='~/assets/img/weed.png' (tap)="tappedWeed()"></Image>
-        <Image class='drugsSign signicon' src='~/assets/img/pills.png' (tap)="tappedPills()"></Image>
-    </WrapLayout>
+	<WrapLayout class="icons">
+		<Image class='alcoholSign signicon' src='~/assets/img/alcohol.png' (tap)="tappedAlcohol()"></Image>
+		<Image class='wietSign signicon' src='~/assets/img/weed.png' (tap)="tappedWeed()"></Image>
+		<Image class='drugsSign signicon' src='~/assets/img/pills.png' (tap)="tappedPills()"></Image>
+	</WrapLayout>
 
-    <AbsoluteLayout class="stripes">
-        <WrapLayout class="signs">
-            <Image class="alcoholStripe stripe" src='~/assets/img/red_stripe.png'></Image>
-            <Image class="wietStripe stripe" src='~/assets/img/red_stripe.png'></Image>
-            <Image class="drugsStripe stripe" src='~/assets/img/red_stripe.png'></Image>
-        </WrapLayout>
-    </AbsoluteLayout>
+	<AbsoluteLayout class="stripes">
+		<WrapLayout class="signs">
+			<Image class="alcoholStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeAlcoholOn"></Image>
+			<Image class="wietStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeWeedOn"></Image>
+			<Image class="drugsStripe stripe" src='~/assets/img/red_stripe.png' [style]="stripeDrugsOn"></Image>
+		</WrapLayout>
+	</AbsoluteLayout>
 </GridLayout>
 
 
