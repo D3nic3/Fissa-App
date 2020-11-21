@@ -1,11 +1,28 @@
 <ActionBar title="Profile"></ActionBar>
 
-<StackLayout>
-    <Label [text]="user.firstname" textWrap="true" class="h2"></Label>
-    <Label [text]="user.lastname" textWrap="true" class="h2"></Label>
-    <Label [text]="user.username" textWrap="true" class="h2"></Label>
-    <Label [text]="user.biography" textWrap="true" class="h2"></Label>
-</StackLayout>
+
+<GridLayout>
+    <StackLayout class="backgroundapp">
+        <Label [text]="user.username" textWrap="true" class="username"></Label>
+
+        <Label [text]="user.biography" textWrap="true" class="biography"></Label>
+        <StackLayout class='line'></StackLayout>
+    </StackLayout>
+
+    <WrapLayout class="icons">
+        <Image class='alcoholSign signicon' src='~/assets/img/alcohol.png' (tap)="tappedAlcohol()"></Image>
+        <Image class='wietSign signicon' src='~/assets/img/weed.png' (tap)="tappedWeed()"></Image>
+        <Image class='drugsSign signicon' src='~/assets/img/pills.png' (tap)="tappedPills()"></Image>
+    </WrapLayout>
+
+    <AbsoluteLayout class="stripes">
+        <WrapLayout class="signs">
+            <Image class="alcoholStripe stripe" src='~/assets/img/red_stripe.png'></Image>
+            <Image class="wietStripe stripe" src='~/assets/img/red_stripe.png'></Image>
+            <Image class="drugsStripe stripe" src='~/assets/img/red_stripe.png'></Image>
+        </WrapLayout>
+    </AbsoluteLayout>
+</GridLayout>
 
 
 

@@ -11,4 +11,6 @@ export class User {
     alcohol: boolean;
     wiet: boolean;
     gender: string;
+    events: [];
+    tijdelijkeAanbevelingsPunten: number;
 }

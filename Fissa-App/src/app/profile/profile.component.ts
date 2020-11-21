@@ -12,6 +12,9 @@ import { DataItem } from "../festival/festival.service";
 @Component({
   selector: "Profile",
   moduleId: module.id,
+  styleUrls: [
+    "./profile.component.css"
+  ],
   templateUrl: "./profile.component.html"
 })
 
@@ -25,6 +28,7 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
         this.profileservice.findAll().subscribe((data) => {
             this.user = data;
+            console.log(data);
         }, (error) => {
             console.log(error.error);
         });
