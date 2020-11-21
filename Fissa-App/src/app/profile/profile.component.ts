@@ -1,8 +1,13 @@
 import { ProfileService } from "./profile.service";
+import { User } from "./profile";
 
 import { Component, OnInit } from "@angular/core";
 import { takePicture, requestPermissions } from "nativescript-camera";
 import { ImageAsset } from "tns-core-modules/image-asset";
+import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
+import { DataItem } from "../festival/festival.service";
 
 @Component({
   selector: "Profile",
@@ -13,28 +18,29 @@ import { ImageAsset } from "tns-core-modules/image-asset";
 export class ProfileComponent implements OnInit {
     /*saveToGallery: boolean = true;
     cameraImage: ImageAsset;*/
-    users: any = [];
-    constructor(private profileservice: ProfileService) {}
+    user: User;
+    constructor(private profileservice: ProfileService) {
+    }
 
     ngOnInit() {
-        this.profileservice.getUsers().subscribe((data: any) => {
-            this.users = data;
-
-            console.log("Users", this.users);
-          });
+        this.profileservice.findAll().subscribe((data) => {
+            this.user = data;
+        }, (error) => {
+            console.log(error.error);
+        });
     }
 
     tappedAlcohol() {
-    console.log("Alcohol");
-  }
+        console.log("Alcohol");
+    }
 
     tappedPills() {
-    console.log("Pills");
-  }
+        console.log("Pills");
+    }
 
     tappedWeed() {
       console.log("Weed");
-  }
+    }
 
     /*onTakePictureTap(args) {
     requestPermissions().then(

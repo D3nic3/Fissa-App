@@ -1,15 +1,11 @@
-<ActionBar title="Profiel"></ActionBar>
+<ActionBar title="Profile"></ActionBar>
 
-
-<GridLayout>
-	<ScrollView>
-		<StackLayout class="home-panel">
-			<!--Add your page content here-->
-			<Label textWrap="true" text="Play with NativeScript!" class="h2 description-label"></Label>
-			<Label textWrap="true" [text]="users.username" class="h2 description-label"></Label>
-		</StackLayout>
-	</ScrollView>
-</GridLayout>
+<StackLayout>
+    <Label [text]="user.firstname" textWrap="true" class="h2"></Label>
+    <Label [text]="user.lastname" textWrap="true" class="h2"></Label>
+    <Label [text]="user.username" textWrap="true" class="h2"></Label>
+    <Label [text]="user.biography" textWrap="true" class="h2"></Label>
+</StackLayout>
 
 
 
@@ -85,3 +81,14 @@
     </GridLayout>
   </ScrollView>
  -->
+
+
+<!-- works with list of all users
+    <StackLayout>
+    <ListView [items]="user">
+        <ng-template let-item="item">
+            <Label [text]="item.firstname" textWrap="true" class="h2"></Label>
+        </ng-template>
+    </ListView>
+    </StackLayout>
+-->

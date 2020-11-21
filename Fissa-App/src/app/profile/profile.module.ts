@@ -5,6 +5,7 @@ import { ProfileService } from "./profile.service";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
             { path: "", redirectTo: "profile" },
             { path: "profile", component: ProfileComponent }
         ]),
-        ProfileRoutingModule
+        ProfileRoutingModule,
+        NativeScriptHttpClientModule
     ],
     declarations: [
         ProfileComponent
